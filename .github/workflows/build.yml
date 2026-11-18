@@ -17,11 +17,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dpkg and fakeroot
-        run: brew install dpkg fakeroot
+      - name: Install dpkg
+        run: brew install dpkg
 
       - name: Setup Theos (with SDKs)
         uses: waruhachi/theos-action@v2.6.5
+
+      - name: Bypass fakeroot (Apple Silicon arm64e issue)
+        run: |
+          DEB_MK="$THEOS/makefiles/package/deb.mk"
+          perl -pi -e 's/\Q$(FAKEROOT) -r \E//' "$DEB_MK"
+          echo "--- patched packaging line ---"
+          grep -n 'COPYFILE_DISABLE' "$DEB_MK"
+          if grep 'COPYFILE_DISABLE' "$DEB_MK" | grep -q 'FAKEROOT'; then
+            echo "::error::Failed to remove FAKEROOT from deb.mk"
+            exit 1
+          fi
 
       - name: Check toolchain
         run: |
