@@ -9,7 +9,14 @@
 #import "JGHKeyMapManager.h"
 #import "JGHFloatingControl.h"
 #import "JGHCommon.h"
+#import "JGHSettings.h"
 #import <UIKit/UIKit.h>
+
+static void JGHSettingsChangedCallback(CFNotificationCenterRef center, void *observer,
+                                       CFStringRef name, const void *object, CFDictionaryRef userInfo) {
+    [[JGHSettings sharedSettings] reload];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"JGHSettingsChanged" object:nil];
+}
 
 @interface JGHTweakManager ()
 // key: "page:usage" -> value: NSNumber(fingerID)，记录当前按下的按键对应的手指
@@ -34,16 +41,25 @@
         _mappingEnabled = YES;
         _pressedKeys = [NSMutableDictionary dictionary];
         _activeActions = [NSMutableDictionary dictionary];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onScroll:)
+                                                     name:@"JGHScrollDidMove"
+                                                   object:nil];
     }
     return self;
 }
 
 - (void)start {
     // 读取启停状态
-    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[JGHCommon settingsPath]];
-    if (settings[@"enabled"] != nil) {
-        self.mappingEnabled = [settings[@"enabled"] boolValue];
-    }
+    [[JGHSettings sharedSettings] reload];
+    self.mappingEnabled = [JGHSettings sharedSettings].enabled;
+
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(),
+                                    (__bridge void *)self,
+                                    JGHSettingsChangedCallback,
+                                    CFSTR("com.jiaying.gamehall.settingschanged"),
+                                    NULL,
+                                    CFNotificationSuspensionBehaviorCoalesce);
 
     [JGHDeviceMonitor sharedMonitor].delegate = self;
     BOOL ok = [[JGHDeviceMonitor sharedMonitor] start];
@@ -69,8 +85,10 @@
         [self.pressedKeys removeAllObjects];
         [self.activeActions removeAllObjects];
     }
-    // 持久化
-    NSDictionary *settings = @{@"enabled": @(enabled)};
+    // 持久化（保留其他设置项，避免覆盖主播模式/鼠标参数）
+    NSMutableDictionary *settings = [[NSDictionary dictionaryWithContentsOfFile:[JGHCommon settingsPath]] mutableCopy];
+    if (!settings) settings = [NSMutableDictionary dictionary];
+    settings[@"enabled"] = @(enabled);
     NSError *err = nil;
     [JGHCommon ensureDirectory:[JGHCommon dataDirectory] error:&err];
     [settings writeToFile:[JGHCommon settingsPath] atomically:YES];
@@ -133,6 +151,30 @@
             }
             break;
         }
+        case JGHActionTypeMacro: {
+            if (!down) break;
+            CGFloat delay = 0;
+            for (NSDictionary *step in action.steps) {
+                CGFloat x = [step[@"x"] floatValue];
+                CGFloat y = [step[@"y"] floatValue];
+                NSString *type = step[@"type"] ?: @"tap";
+                CGFloat stepDelay = [step[@"delay"] floatValue];
+                delay += stepDelay;
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)),
+                               dispatch_get_main_queue(), ^{
+                    if ([type isEqualToString:@"hold"]) {
+                        [injector touchDownAtX:x y:y fingerID:finger];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.08 * NSEC_PER_SEC)),
+                                       dispatch_get_main_queue(), ^{
+                            [injector touchUpAtX:x y:y fingerID:finger];
+                        });
+                    } else {
+                        [injector tapAtX:x y:y fingerID:finger];
+                    }
+                });
+            }
+            break;
+        }
         case JGHActionTypeJoystick: {
             // 虚拟摇杆：按下时把手指移动到方向偏移位置，松开回到中心并抬起
             if (down) {
@@ -152,6 +194,24 @@
             break;
         }
     }
+}
+
+- (void)onScroll:(NSNotification *)note {
+    if (!self.mappingEnabled) return;
+    CGFloat x = [note.userInfo[@"x"] floatValue];
+    CGFloat y = [note.userInfo[@"y"] floatValue];
+    CGFloat dx = [note.userInfo[@"dx"] floatValue];
+    CGFloat dy = [note.userInfo[@"dy"] floatValue];
+    JGHEventInjector *injector = [JGHEventInjector sharedInjector];
+    [injector touchDownAtX:x y:y fingerID:9];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.04 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+        [injector touchMoveAtX:x + dx y:y + dy fingerID:9];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.04 * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+            [injector touchUpAtX:x + dx y:y + dy fingerID:9];
+        });
+    });
 }
 
 - (void)deviceMonitorDidConnectDevice:(NSString *)name {

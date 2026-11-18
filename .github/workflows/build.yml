@@ -5,13 +5,13 @@ on:
   push:
     branches: [ main, master ]
 
+# 允许自动创建/更新 Release
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: macos-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        scheme: [ rootless, rootful ]
 
     steps:
       - name: Checkout
@@ -24,8 +24,12 @@ jobs:
         uses: waruhachi/theos-action@v2.6.5
 
       - name: Bypass fakeroot (Apple Silicon arm64e issue)
+        # Homebrew 的 fakeroot 注入库是 arm64，而 CI 打包进程跑在 arm64e，
+        # dyld 拒绝加载 -> Abort trap: 6。CI 里无需 fakeroot 改文件属主，
+        # 直接把 theos deb.mk 里的 "$(FAKEROOT) -r " 去掉，用 dpkg-deb 打包。
         run: |
           DEB_MK="$THEOS/makefiles/package/deb.mk"
+          # \Q...\E 按字面串匹配，避免 $ ( ) 被当成正则元字符
           perl -pi -e 's/\Q$(FAKEROOT) -r \E//' "$DEB_MK"
           echo "--- patched packaging line ---"
           grep -n 'COPYFILE_DISABLE' "$DEB_MK"
@@ -41,15 +45,35 @@ jobs:
           which dpkg-deb
           which ldid
 
-      - name: Build deb
+      # 只编译 rootless：你的 Dopamine/rootless 越狱环境只需要这个，
+      # 去掉 rootful 可让排队和编译时间几乎减半。
+      - name: Build deb (rootless only)
         run: |
           chmod +x build.sh
-          ./build.sh ${{ matrix.scheme }}
+          ./build.sh rootless
 
-      - name: Upload artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: JiayingGameTweak-${{ matrix.scheme }}
-          path: artifacts/JiayingGameTweak-${{ matrix.scheme }}.deb
+          name: JiayingGameHall
+          path: |
+            artifacts/JiayingGameTweak-rootless.deb
+            artifacts/JiayingGameHall-app.deb
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 90
+
+      # 编译成功后自动发布到 Releases，固定 tag=latest，每次 push 自动更新，
+      # 你只要去仓库 Releases 页下载 deb 即可，不用翻 Actions/Artifacts。
+      - name: Publish Release (latest)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: JiayingGameTweak (rootless)
+          body: |
+            自动编译产物 — 每次代码 push 后自动更新。
+            下载下方的 .deb 安装到越狱机即可。
+          files: |
+            artifacts/JiayingGameTweak-rootless.deb
+            artifacts/JiayingGameHall-app.deb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

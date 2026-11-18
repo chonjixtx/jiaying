@@ -67,7 +67,7 @@ chmod +x build.sh
 ./build.sh both
 ```
 
-- **rootless** 适用 iOS 15.0+（Dopamine / Odyssey 等），依赖 `com.opa334.ellekit`
+- **rootless** 适用 iOS 15.0+（Dopamine / Odyssey 等），依赖 `mobilesubstrate`（ElleKit 提供该虚拟包）
 - **rootful** 适用 iOS 14 及以下传统越狱，依赖 `mobilesubstrate`
 
 > 编译期若报 IOHID 私有符号未定义，确认 `JiayingGameTweak_PRIVATE_FRAMEWORKS = IOKit` 已生效，且所用 SDK 含 IOKit 私有头。

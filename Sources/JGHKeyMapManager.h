@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, JGHActionType) {
     JGHActionTypeHold     = 1,  // 长按（按住即保持按下）
     JGHActionTypeSwipe    = 2,  // 滑动（从 x,y 沿 dx,dy 划动）
     JGHActionTypeJoystick = 3,  // 虚拟摇杆（组合键产生方向）
+    JGHActionTypeMacro    = 4,  // 宏按键（按预设步骤依次注入触摸）
 };
 
 @interface JGHAction : NSObject <NSCoding>
@@ -24,6 +25,7 @@ typedef NS_ENUM(NSInteger, JGHActionType) {
 @property (nonatomic) CGFloat dx;     // swipe 方向/摇杆位移
 @property (nonatomic) CGFloat dy;
 @property (nonatomic) NSInteger fingerID; // 多点触摸编号（默认 0）
+@property (nonatomic, copy) NSArray<NSDictionary *> *steps; // 宏步骤：type/x/y/delay
 + (instancetype)actionWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionaryRepresentation;
 @end

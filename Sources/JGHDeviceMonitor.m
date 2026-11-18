@@ -6,7 +6,9 @@
 #import "JGHDeviceMonitor.h"
 #import "IOHIDPrivate.h"
 #import "JGHCommon.h"
+#import "JGHSettings.h"
 #import <math.h>
+#import <UIKit/UIKit.h>
 
 // C 回调桥接：把 IOHIDManager 回调转发给 ObjC delegate
 static void JGHDeviceMatched(void *context, IOReturn result, void *sender, IOHIDDeviceRef device) {
@@ -38,6 +40,36 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
     // 忽略 Keyboard 的 rollover/error 等无效 usage
     if (page == kHIDPage_KeyboardOrKeypad && (usage == 0x00 || usage == 0x01)) return;
 
+    // 鼠标相对移动：维护虚拟指针并广播坐标
+    if (page == kHIDPage_GenericDesktop && (usage == 0x30 || usage == 0x31)) {
+        double delta = IOHIDValueGetIntegerValue(value);
+        CGFloat sensitivity = [JGHSettings sharedSettings].mouseSensitivity;
+        if (usage == 0x30) self.pointerX += delta * sensitivity;
+        else self.pointerY += delta * sensitivity;
+        CGSize screen = [UIScreen mainScreen].bounds.size;
+        self.pointerX = MAX(0, MIN(screen.width, self.pointerX));
+        self.pointerY = MAX(0, MIN(screen.height, self.pointerY));
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"JGHPointerDidMove"
+                                                            object:nil
+                                                          userInfo:@{@"x": @(self.pointerX), @"y": @(self.pointerY)}];
+        return;
+    }
+
+    // 鼠标滚轮：转换为触摸滑动
+    if (page == kHIDPage_GenericDesktop && usage == 0x38) {
+        NSInteger step = [JGHSettings sharedSettings].scrollStep;
+        double wheel = IOHIDValueGetIntegerValue(value);
+        NSString *orientation = [JGHSettings sharedSettings].scrollOrientation;
+        CGFloat dx = [orientation isEqualToString:@"horizontal"] ? (CGFloat)(wheel * step) : 0;
+        CGFloat dy = [orientation isEqualToString:@"horizontal"] ? 0 : (CGFloat)(wheel * step);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"JGHScrollDidMove"
+                                                            object:nil
+                                                          userInfo:@{@"x": @(self.pointerX),
+                                                                     @"y": @(self.pointerY),
+                                                                     @"dx": @(dx), @"dy": @(dy)}];
+        return;
+    }
+
     double scaled = IOHIDValueGetScaledValue(value, kIOHIDValueScaleTypeCalibrated);
     CFIndex integer = IOHIDValueGetIntegerValue(value);
 
@@ -62,6 +94,8 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
 @interface JGHDeviceMonitor ()
 @property (nonatomic) IOHIDManagerRef manager;
 @property (nonatomic, readwrite) BOOL running;
+@property (nonatomic) CGFloat pointerX;
+@property (nonatomic) CGFloat pointerY;
 @end
 
 @implementation JGHDeviceMonitor
@@ -78,7 +112,9 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // 兼容老系统枚举名（kIOHIDDeviceCapabilitiesKey 等可能为弱符号，取值失败不影响）
+        CGSize screen = [UIScreen mainScreen].bounds.size;
+        _pointerX = screen.width / 2;
+        _pointerY = screen.height / 2;
     }
     return self;
 }

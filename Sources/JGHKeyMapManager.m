@@ -19,6 +19,7 @@
     if      ([type isEqualToString:@"hold"])     a.type = JGHActionTypeHold;
     else if ([type isEqualToString:@"swipe"])    a.type = JGHActionTypeSwipe;
     else if ([type isEqualToString:@"joystick"]) a.type = JGHActionTypeJoystick;
+    else if ([type isEqualToString:@"macro"])    a.type = JGHActionTypeMacro;
     else                                          a.type = JGHActionTypeTap;
 
     a.x = dict[@"x"] ? [dict[@"x"] floatValue] : 0.5f;
@@ -26,6 +27,7 @@
     a.dx = dict[@"dx"] ? [dict[@"dx"] floatValue] : 0.0f;
     a.dy = dict[@"dy"] ? [dict[@"dy"] floatValue] : 0.0f;
     a.fingerID = dict[@"finger"] ? [dict[@"finger"] integerValue] : 0;
+    a.steps = [dict[@"steps"] isKindOfClass:[NSArray class]] ? dict[@"steps"] : @[];
     return a;
 }
 
@@ -35,12 +37,17 @@
         case JGHActionTypeHold:     type = @"hold"; break;
         case JGHActionTypeSwipe:    type = @"swipe"; break;
         case JGHActionTypeJoystick: type = @"joystick"; break;
+        case JGHActionTypeMacro:    type = @"macro"; break;
         default:                    type = @"tap"; break;
     }
-    return @{@"type": type,
-             @"x": @(self.x), @"y": @(self.y),
-             @"dx": @(self.dx), @"dy": @(self.dy),
-             @"finger": @(self.fingerID)};
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:@{
+        @"type": type,
+        @"x": @(self.x), @"y": @(self.y),
+        @"dx": @(self.dx), @"dy": @(self.dy),
+        @"finger": @(self.fingerID)
+    }];
+    if (self.steps.count) dict[@"steps"] = self.steps;
+    return dict;
 }
 
 // NSCoding（便于偏好面板序列化）
@@ -51,6 +58,7 @@
     [coder encodeDouble:self.dx forKey:@"dx"];
     [coder encodeDouble:self.dy forKey:@"dy"];
     [coder encodeInteger:self.fingerID forKey:@"finger"];
+    [coder encodeObject:self.steps forKey:@"steps"];
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)coder {
@@ -62,6 +70,7 @@
         _dx = [coder decodeDoubleForKey:@"dx"];
         _dy = [coder decodeDoubleForKey:@"dy"];
         _fingerID = [coder decodeIntegerForKey:@"finger"];
+        _steps = [coder decodeObjectForKey:@"steps"] ?: @[];
     }
     return self;
 }
