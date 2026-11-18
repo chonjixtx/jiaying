@@ -9,9 +9,9 @@
 # 也可直接用 ./build.sh 选择 scheme 打包。
 # =============================================================================
 
-export TARGET := JiayingGameTweak
+# --- 让 theOS recognize 这是一个 tweak ---
+# 注意：TARGET 是 theOS 保留变量，不能设为工程名
 
-# --- 让 theOS  recognize 这是一个 tweak ---
 TWEAK_NAME = JiayingGameTweak
 
 # --- 源文件（Tweak.x + 各 Objective-C 模块） ---
