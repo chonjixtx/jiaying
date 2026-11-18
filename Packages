@@ -13,6 +13,7 @@ Size: 17284
 MD5sum: a630335b889742e33394e0ade258c54b
 SHA1: 9e8464132f32fae565453a75e467e5d81f31a377
 SHA256: 79a846fb2eb5536d55235e5740179866bed4e977311d1a90ba75c041a8095fef
+
 Package: com.jiaying.gamehalltweak.rootless
 Name: Jiaying GameHall Tweak (Rootless)
 Description: iOS peripheral-to-touch mapping core for mobile games (rootless / elleKit). Supports Bluetooth/USB keyboards, mice and gamepads with customizable key mappings, floating control panel and in-game touch injection.
