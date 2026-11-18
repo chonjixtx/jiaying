@@ -4,15 +4,12 @@
 <dict>
     <key>Filter</key>
     <dict>
-        <!-- 注入所有 App，方便先跑通测试。
-             确认可用后，可删除下面两行，改用 Bundles 只注入目标游戏，例如：
-             <key>Bundles</key>
-             <array>
-                 <string>com.tencent.tmgp.pubgmhd</string>
-                 <string>com.tencent.tmgp.sgame</string>
-             </array> -->
-        <key>Any</key>
-        <true/>
+        <!-- ElleKit 不支持 Any=true。用 UIApplication 类匹配所有普通 App/游戏，
+             注入器会在 UIKit App 启动时识别到这个类。 -->
+        <key>Classes</key>
+        <array>
+            <string>UIApplication</string>
+        </array>
     </dict>
 </dict>
 </plist>
