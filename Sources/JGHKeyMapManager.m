@@ -5,6 +5,9 @@
 
 #import "JGHKeyMapManager.h"
 #import "JGHCommon.h"
+// defaultProfile 用到 kHIDPage_KeyboardOrKeypad / kHIDPage_Button 常量，
+// 这些定义在 IOHIDPrivate.h，必须引入否则 "undeclared identifier"。
+#import "IOHIDPrivate.h"
 
 #pragma mark - JGHAction
 
