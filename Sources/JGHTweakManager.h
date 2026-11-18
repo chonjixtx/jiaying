@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@protocol JGHDeviceMonitorDelegate;
+// 必须 import 完整定义：类声明遵守该协议时，仅有 @protocol 前向声明会导致
+// "cannot find protocol definition" 编译错误。
+#import "JGHDeviceMonitor.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
