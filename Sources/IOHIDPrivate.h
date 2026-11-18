@@ -18,6 +18,8 @@
 
 typedef struct __IOHIDEvent *IOHIDEventRef;
 typedef struct __IOHIDEventSystemClient *IOHIDEventSystemClientRef;
+
+// IOHIDEvent 字段类型（iOS SDK 私有头中定义为 CFIndex 的整数类型）
 typedef CFIndex IOHIDEventField;
 
 typedef enum {
@@ -98,6 +100,8 @@ enum {
 extern IOHIDManagerRef IOHIDManagerCreate(CFAllocatorRef allocator, IOOptionBits options);
 extern void IOHIDManagerUnscheduleFromRunLoop(IOHIDManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
 extern void IOHIDManagerSetDeviceMatching(IOHIDManagerRef manager, CFDictionaryRef matching);
+// 多条件匹配：接受 CFArrayRef（数组元素是 CFDictionaryRef）
+extern void IOHIDManagerSetDeviceMatchingMultiple(IOHIDManagerRef manager, CFArrayRef matching);
 extern void IOHIDManagerRegisterDeviceMatchingCallback(IOHIDManagerRef manager, IOHIDDeviceCallback callback, void *context);
 extern void IOHIDManagerRegisterDeviceRemovalCallback(IOHIDManagerRef manager, IOHIDDeviceCallback callback, void *context);
 extern void IOHIDManagerRegisterInputValueCallback(IOHIDManagerRef manager, IOHIDValueCallback callback, void *context);
@@ -118,15 +122,8 @@ extern uint32_t IOHIDElementGetUsagePage(IOHIDElementRef element);
 extern uint32_t IOHIDElementGetLogicalMin(IOHIDElementRef element);
 extern uint32_t IOHIDElementGetLogicalMax(IOHIDElementRef element);
 
-// 常用属性键
-extern CFStringRef const kIOHIDDeviceCapabilitiesKey;
-extern CFStringRef const kIOHIDPrimaryUsagePageKey;
-extern CFStringRef const kIOHIDPrimaryUsageKey;
-extern CFStringRef const kIOHIDProductKey;
-extern CFStringRef const kIOHIDVendorIDKey;
-extern CFStringRef const kIOHIDProductIDKey;
-extern CFStringRef const kIOHIDDeviceUsagePageKey;
-extern CFStringRef const kIOHIDDeviceUsageKey;
+// 常用属性键用字符串字面量（CFSTR("Product") 等），不声明 extern 符号，
+// 避免链接未公开符号导致 undefined symbol。
 
 // Usage Page
 enum {
