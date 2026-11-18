@@ -1,0 +1,46 @@
+name: Build JiayingGameTweak
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scheme: [ rootless, rootful ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dpkg
+        run: brew install dpkg
+
+      - name: Install theOS
+        run: |
+          bash <(curl -sL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)
+          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+
+      - name: Check SDK
+        run: |
+          echo "THEOS=$THEOS"
+          ls -la "$THEOS/sdks/" || true
+          which dpkg-deb
+          which ldid || true
+
+      - name: Build deb
+        run: |
+          chmod +x build.sh
+          ./build.sh ${{ matrix.scheme }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JiayingGameTweak-${{ matrix.scheme }}
+          path: artifacts/JiayingGameTweak-${{ matrix.scheme }}.deb
+          if-no-files-found: error
+          retention-days: 30
