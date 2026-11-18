@@ -1,0 +1,32 @@
+Package: com.jiaying.gamehall.app
+Name: 佳影游戏厅
+Description: 佳影游戏厅 — 外设映射管理软件。添加游戏、配置按键与宏、设置主播模式与鼠标指针。
+Maintainer: Jiaying Dev <dev@example.com>
+Author: Jiaying Dev
+Section: Applications
+Depends: com.jiaying.gamehalltweak.rootless (>= 0.1.1), mobilesubstrate
+Architecture: iphoneos-arm64
+Version: 0.1.0-1+debug
+Installed-Size: 100
+Filename: debs/JiayingGameHall-app.deb
+Size: 17316
+MD5sum: b43954dd8f9e582f1ee5ce1b38e23f63
+SHA1: ff73c957b816abbfd284e232423afbadac09d8d2
+SHA256: f75bd83a81c9b1d4750b311f7ba837626b604d23bdaa3ecdb51d1775d88b8ec9
+
+Package: com.jiaying.gamehalltweak.rootless
+Name: Jiaying GameHall Tweak (Rootless)
+Description: iOS peripheral-to-touch mapping core for mobile games (rootless / elleKit). Supports Bluetooth/USB keyboards, mice and gamepads with customizable key mappings, floating control panel and in-game touch injection.
+Maintainer: Jiaying Dev <dev@example.com>
+Author: Jiaying Dev
+Section: Tweaks
+Depends: mobilesubstrate
+Conflicts: com.jiaying.gamehalltweak
+Architecture: iphoneos-arm64
+Version: 0.1.2-1+debug
+Installed-Size: 416
+Filename: debs/JiayingGameTweak-rootless.deb
+Size: 60434
+MD5sum: 67f5470d58d9bd0a4d918b2e841006b5
+SHA1: ef447016f43033b7af49a8ad19bc1e6ca5ea0c19
+SHA256: da5209f0a8fccc5a7cad66ae0219ec52ba104102ed0f19aa4597912bf4912373

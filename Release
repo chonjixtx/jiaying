@@ -1,0 +1,16 @@
+Origin: Jiaying GameHall Repo
+Label: Jiaying GameHall Repo
+Suite: stable
+Codename: stable
+Architectures: iphoneos-arm64
+Components: main
+Description: Jiaying GameHall - 佳影游戏厅 rootless 软件源
+Date: Wed, 18 Nov 2026 22:23:57 UTC
+MD5Sum:/n d7f85b6804a857976835d3f3a98a8192 1369 Packages
+ 4cb69f32abb062b85b22c64c454b64c0 815 Packages.gz
+SHA1:
+ 38ec31ba3bd2ae38c0a5f194fb825e37035155fa 1369 Packages
+ ef9672259771c5c44b954b8956c512d29ff65268 815 Packages.gz
+SHA256:
+ bacb205e02c18aee071c17201603fa725195b27cabd43056acf707a368ddcc7a 1369 Packages
+ e0c57d149e48b2c0baa20a202a5cadfe373ffde194ead6bcf313917bff55fa17 815 Packages.gz

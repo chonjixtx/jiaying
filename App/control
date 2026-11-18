@@ -1,9 +1,0 @@
-Package: com.jiaying.gamehall.app
-Name: 佳影游戏厅
-Version: 0.1.0
-Architecture: iphoneos-arm64
-Description: 佳影游戏厅 — 外设映射管理软件。添加游戏、配置按键与宏、设置主播模式与鼠标指针。
-Maintainer: Jiaying Dev <dev@example.com>
-Author: Jiaying Dev
-Section: Applications
-Depends: com.jiaying.gamehalltweak.rootless (>= 0.1.1), mobilesubstrate
