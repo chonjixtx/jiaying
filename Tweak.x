@@ -38,8 +38,18 @@ static void JGHInitialize(void) {
 %ctor {
     @autoreleasepool {
         JGHLog(@"ctor 注入成功, pid=%d", getpid());
-        // 双保险：部分 App 不走标准 didFinishLaunching，用延迟兜底初始化
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)),
+
+        // 首选：监听 UIKit 的启动通知。比 hook UIApplication 的
+        // didFinishLaunching 更可靠（部分游戏根本不走那个方法）。
+        [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidFinishLaunchingNotification
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:^(NSNotification *note) {
+            JGHInitialize();
+        }];
+
+        // 兜底：通知漏掉或游戏启动极慢时，延迟初始化。
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)),
                        dispatch_get_main_queue(), ^{
             JGHInitialize();
         });
