@@ -6,5 +6,5 @@ Description: iOS peripheral-to-touch mapping core for mobile games (rootless / e
 Maintainer: Jiaying Dev <dev@example.com>
 Author: Jiaying Dev
 Section: Tweaks
-Depends: com.opa334.ellekit (>= 1.0)
+Depends: mobilesubstrate (>= 1.0)
 Conflicts: com.jiaying.gamehalltweak
