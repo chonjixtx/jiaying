@@ -10,6 +10,15 @@
 #import <math.h>
 #import <UIKit/UIKit.h>
 
+// 私有属性必须在使用它们的 C 回调之前声明，否则编译器在 C 函数处
+// 看不到 pointerX/pointerY，会报 "property not found"。
+@interface JGHDeviceMonitor ()
+@property (nonatomic) IOHIDManagerRef manager;
+@property (nonatomic, readwrite) BOOL running;
+@property (nonatomic) CGFloat pointerX;
+@property (nonatomic) CGFloat pointerY;
+@end
+
 // C 回调桥接：把 IOHIDManager 回调转发给 ObjC delegate
 static void JGHDeviceMatched(void *context, IOReturn result, void *sender, IOHIDDeviceRef device) {
     JGHDeviceMonitor *self = (__bridge JGHDeviceMonitor *)context;
@@ -90,13 +99,6 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
         [self.delegate deviceMonitorDidReceiveUsagePage:page usage:usage value:scaled down:down];
     }
 }
-
-@interface JGHDeviceMonitor ()
-@property (nonatomic) IOHIDManagerRef manager;
-@property (nonatomic, readwrite) BOOL running;
-@property (nonatomic) CGFloat pointerX;
-@property (nonatomic) CGFloat pointerY;
-@end
 
 @implementation JGHDeviceMonitor
 
