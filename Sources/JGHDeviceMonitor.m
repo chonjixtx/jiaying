@@ -11,7 +11,7 @@
 // C 回调桥接：把 IOHIDManager 回调转发给 ObjC delegate
 static void JGHDeviceMatched(void *context, IOReturn result, void *sender, IOHIDDeviceRef device) {
     JGHDeviceMonitor *self = (__bridge JGHDeviceMonitor *)context;
-    CFStringRef nameRef = (CFStringRef)IOHIDDeviceGetProperty(device, kIOHIDProductKey);
+    CFStringRef nameRef = (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR("Product"));
     NSString *name = nameRef ? (__bridge NSString *)nameRef : @"未知设备";
     JGHLog(@"外设已连接: %@", name);
     if ([self.delegate respondsToSelector:@selector(deviceMonitorDidConnectDevice:)]) {
@@ -21,7 +21,7 @@ static void JGHDeviceMatched(void *context, IOReturn result, void *sender, IOHID
 
 static void JGHDeviceRemoved(void *context, IOReturn result, void *sender, IOHIDDeviceRef device) {
     JGHDeviceMonitor *self = (__bridge JGHDeviceMonitor *)context;
-    CFStringRef nameRef = (CFStringRef)IOHIDDeviceGetProperty(device, kIOHIDProductKey);
+    CFStringRef nameRef = (CFStringRef)IOHIDDeviceGetProperty(device, CFSTR("Product"));
     NSString *name = nameRef ? (__bridge NSString *)nameRef : @"未知设备";
     JGHLog(@"外设已断开: %@", name);
     if ([self.delegate respondsToSelector:@selector(deviceMonitorDidDisconnectDevice:)]) {
@@ -48,7 +48,7 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
     BOOL down;
     if (analog) {
         double mid = (logicalMin + logicalMax) / 2.0;
-        // 摇杆轴：远离中值即视为“按下”，便于映射到方向键
+        // 摇杆轴：远离中值即视为"按下"，便于映射到方向键
         down = fabs(scaled - mid) > (logicalMax - logicalMin) * 0.3;
     } else {
         down = (integer != 0);
@@ -78,7 +78,7 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // 兼容老系统枚举名（kIOHIDDeviceCapabilitiesKey 等可能为弱符号，取值失败不影响）
+        // 初始化：无需额外设置
     }
     return self;
 }
@@ -93,15 +93,15 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
     }
 
     // 匹配键盘、鼠标/指针、手柄（Generic Desktop / Button / Consumer）
+    // 用字符串字面量作为 key/value，避免依赖 IOKit 里的 extern CFString 符号
+    NSString *pageKey = @"DeviceUsagePage";
+    NSString *usageKey = @"DeviceUsage";
     NSArray *matching = @[
-        @{@(kIOHIDDeviceUsagePageKey): @(kHIDPage_KeyboardOrKeypad)},
-        @{@(kIOHIDDeviceUsagePageKey): @(kHIDPage_GenericDesktop),
-          @(kIOHIDDeviceUsageKey): @(2)},   // Mouse
-        @{@(kIOHIDDeviceUsagePageKey): @(kHIDPage_GenericDesktop),
-          @(kIOHIDDeviceUsageKey): @(4)},   // Joystick
-        @{@(kIOHIDDeviceUsagePageKey): @(kHIDPage_GenericDesktop),
-          @(kIOHIDDeviceUsageKey): @(5)},   // Game Pad
-        @{@(kIOHIDDeviceUsagePageKey): @(kHIDPage_Button)},
+        @{pageKey: @(kHIDPage_KeyboardOrKeypad)},
+        @{pageKey: @(kHIDPage_GenericDesktop), usageKey: @(2)},   // Mouse
+        @{pageKey: @(kHIDPage_GenericDesktop), usageKey: @(4)},   // Joystick
+        @{pageKey: @(kHIDPage_GenericDesktop), usageKey: @(5)},   // Game Pad
+        @{pageKey: @(kHIDPage_Button)},
     ];
     IOHIDManagerSetDeviceMatching(_manager, (__bridge CFDictionaryRef)matching);
 
