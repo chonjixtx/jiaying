@@ -144,13 +144,18 @@
         [self.editorPanel addSubview:b];
     }
 
-    // 鼠标指针
+    // 虚拟鼠标指针：启动时直接放在屏幕中央可见位置，
+    // 不再等第一次 HID 移动事件才从屏幕外 (-50,-50) 移进来。
     CGFloat ps = [JGHSettings sharedSettings].pointerSize;
-    self.pointerView = [[UIView alloc] initWithFrame:CGRectMake(-50, -50, ps, ps)];
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    self.pointerView = [[UIView alloc] initWithFrame:CGRectMake((screenSize.width - ps) / 2,
+                                                                (screenSize.height - ps) / 2,
+                                                                ps, ps)];
     self.pointerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.85];
     self.pointerView.layer.cornerRadius = ps / 2;
     self.pointerView.layer.borderColor = [UIColor blackColor].CGColor;
     self.pointerView.layer.borderWidth = 1;
+    self.pointerView.userInteractionEnabled = NO;
     [self.container addSubview:self.pointerView];
 
     self.window = [[UIWindow alloc] initWithFrame:screen];
