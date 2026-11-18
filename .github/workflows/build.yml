@@ -17,17 +17,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install build tools
-        run: |
-          brew install dpkg ldid
+      - name: Install dpkg and fakeroot
+        run: brew install dpkg fakeroot
 
-      - name: Install theOS (manual clone)
-        run: |
-          git clone --recursive https://github.com/theos/theos.git "$HOME/theos"
-          git clone --depth 1 https://github.com/theos/sdks.git "$HOME/theos/sdks"
-          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+      - name: Setup Theos (with SDKs)
+        uses: waruhachi/theos-action@v2.6.5
 
-      - name: Check SDK and toolchain
+      - name: Check toolchain
         run: |
           echo "THEOS=$THEOS"
           ls "$THEOS/sdks/" | head -20
