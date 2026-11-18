@@ -17,20 +17,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dpkg
-        run: brew install dpkg
-
-      - name: Install theOS
+      - name: Install build tools
         run: |
-          bash <(curl -sL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)
+          brew install dpkg ldid
+
+      - name: Install theOS (manual clone)
+        run: |
+          git clone --recursive https://github.com/theos/theos.git "$HOME/theos"
+          git clone --depth 1 https://github.com/theos/sdks.git "$HOME/theos/sdks"
           echo "THEOS=$HOME/theos" >> $GITHUB_ENV
 
-      - name: Check SDK
+      - name: Check SDK and toolchain
         run: |
           echo "THEOS=$THEOS"
-          ls -la "$THEOS/sdks/" || true
+          ls "$THEOS/sdks/" | head -20
           which dpkg-deb
-          which ldid || true
+          which ldid
 
       - name: Build deb
         run: |
