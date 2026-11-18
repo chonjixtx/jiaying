@@ -17,9 +17,8 @@
     NSDictionary *saved = [NSDictionary dictionaryWithContentsOfFile:[JGHCommon settingsPath]];
     NSDictionary *defaults = @{
         @"enabled": @YES,
-        // 主播模式默认关闭：投屏/录屏/电脑端屏幕助手也会让 isCaptured=YES，
-        // 默认开启会把悬浮 J 和虚拟鼠标一起隐藏，导致用户以为 tweak 没生效。
-        @"streamerMode": @NO,
+        // 主播模式：开启后悬浮层对录屏/截图不可见，但本机屏幕仍可见。
+        @"streamerMode": @YES,
         @"mouseSensitivity": @1.0,
         @"pointerSize": @12.0,
         @"customPointerPath": @"",
