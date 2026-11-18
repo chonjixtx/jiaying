@@ -1,14 +1,14 @@
 Package: com.jiaying.gamehall
 Name: 佳影游戏厅
-Version: 1.0.2
+Version: 1.0.3
 Architecture: iphoneos-arm64
 Description: 佳影游戏厅 - 外设映射管理软件与游戏内悬浮按键。安装即包含桌面App和注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。
 Maintainer: Jiaying Dev <dev@example.com>
 Author: Jiaying Dev
 Section: Applications
 Depends: mobilesubstrate
-Filename: debs/JiayingGameHall-full_1.0.2_iphoneos-arm64.deb
-Size: 71170
-MD5sum: a0512b669b69c5a5d6a4a0ce92717edb
-SHA1: a9a044ec27456cd3ab546d36c461328f723989aa
-SHA256: cedd42ea3bfde1da1e4b8763cb0aff0e55931fbdf2dfceae2d0652fe6fb31506
+Filename: debs/JiayingGameHall-full_1.0.3_iphoneos-arm64.deb
+Size: 71246
+MD5sum: 27e8eae0e437c20abb74f3155c2e6f23
+SHA1: f56b2face87b0adfc10c64b49bda9074f6d823cc
+SHA256: 80b8a5a573216f7ae89f0c848d2a421082a3dd4434c1f88bdff3067514c16d86
