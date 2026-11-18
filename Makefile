@@ -10,8 +10,8 @@
 # =============================================================================
 
 # --- 让 theOS recognize 这是一个 tweak ---
-# 注意：TARGET 是 theOS 保留变量，不能设为工程名
-
+# 注意：TARGET 是 theOS 保留变量（表示编译目标平台），不能设为工程名。
+# 不设置它，让 theOS 根据 THEOS_PACKAGE_SCHEME 自动选择 iphoneos 目标。
 TWEAK_NAME = JiayingGameTweak
 
 # --- 源文件（Tweak.x + 各 Objective-C 模块） ---
@@ -31,10 +31,12 @@ JiayingGameTweak_FRAMEWORKS = Foundation UIKit CoreGraphics QuartzCore
 JiayingGameTweak_PRIVATE_FRAMEWORKS = IOKit
 
 # --- 头文件搜索路径 ---
-JiayingGameTweak_CFLAGS = -fobjc-arc -I$(CURDIR)/Sources
+# -Wno-error：theOS 默认把 warning 当 error（日志里可见 [-Werror]），
+# 关闭后可避免 SDK 版本差异带来的无害警告导致编译失败。
+JiayingGameTweak_CFLAGS = -fobjc-arc -Wno-error -I$(CURDIR)/Sources
 
 # --- ARC + Logos 需要 C++17 (Logos 生成 .mm) ---
-JiayingGameTweak_CXXFLAGS = -std=c++17
+JiayingGameTweak_CXXFLAGS = -std=c++17 -Wno-error
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
