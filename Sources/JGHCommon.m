@@ -41,9 +41,11 @@
     if ([fm fileExistsAtPath:path]) {
         return YES;
     }
+    // 用字符串字面量作为 key，避免依赖真机 SDK 中可能未公开的 NSFileProtectionKey 符号；
+    // value 用 NSFileProtectionNone 的字符串值，文件保护属性非必需。
     return [fm createDirectoryAtPath:path
          withIntermediateDirectories:YES
-                          attributes:@{NSFileProtectionKey: NSFileProtectionNone}
+                          attributes:@{@"NSFileProtection": @"NSFileProtectionNone"}
                                error:error];
 }
 
