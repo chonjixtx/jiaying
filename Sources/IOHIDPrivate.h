@@ -18,6 +18,7 @@
 
 typedef struct __IOHIDEvent *IOHIDEventRef;
 typedef struct __IOHIDEventSystemClient *IOHIDEventSystemClientRef;
+typedef CFIndex IOHIDEventField;
 
 typedef enum {
     kIOHIDDigitizerTransducerTypeStylus = 0,
