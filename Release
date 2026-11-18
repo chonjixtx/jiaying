@@ -5,13 +5,13 @@ Codename: stable
 Architectures: iphoneos-arm64 iphoneos-arm64e iphoneos-arm
 Components: main
 Description: Jiaying GameHall - 佳影游戏厅 rootless 软件源
-Date: Wed, 18 Nov 2026 22:34:57 UTC
+Date: Wed, 18 Nov 2026 22:38:06 UTC
 MD5Sum:
- 80d7d8600bb23f1375661d82039bd627 1321 Packages
- 0e109c289947479e65ea8f0cda134ca7 795 Packages.gz
+ 9ac51c4dd3c35a592ce6ffdddc5ac014 1322 Packages
+ c161ddc3ffb608d9dd433a4b91388a65 796 Packages.gz
 SHA1:
- 366264bbe31508725f1df7caa0febe9851d5908f 1321 Packages
- 0e9083f9fd69c5b41928a1428b1d67727c6d6a09 795 Packages.gz
+ 869b0b0232c0f75134f82f20d20d764300f58165 1322 Packages
+ bfb4393d3584961a49fd7cd86d7b7b0832dfef61 796 Packages.gz
 SHA256:
- eda397e32df3c36d01c98afe7fda7c6ee9c76ea4fc61953b59bf48d5745ddf7e 1321 Packages
- 616f9634e24d15ba4c09e9549665bf946b622cdcd9d211f259f9d6cee63fd667 795 Packages.gz
+ 84209ccab4a9a92e247fc183f62e52bd745dfe02d03f189ce15f3867db1ccfd7 1322 Packages
+ a476c2e15a5aef52380a6a970e3fa076c4d7a56fa6c0d41c50ed0a94eccd8495 796 Packages.gz
