@@ -167,6 +167,7 @@
 
     [self refreshStatus];
     [self applyStreamerMode];
+    [self applyCaptureProtection];
 }
 
 #pragma mark - 面板交互
@@ -333,8 +334,27 @@
 }
 
 - (void)applyStreamerMode {
-    BOOL hide = [JGHSettings sharedSettings].streamerMode && [UIScreen mainScreen].isCaptured;
-    self.window.hidden = hide;
+    // 主播模式不再把自己从屏幕上隐藏，而是把悬浮层标记为“捕获时排除”。
+    // 这样录屏/截图里看不到按键，但用户在本机屏幕上照常可见可操作。
+    [self applyCaptureProtection];
+}
+
+- (void)applyCaptureProtection {
+    BOOL protect = [JGHSettings sharedSettings].streamerMode;
+    CALayer *layer = self.container.layer;
+    if (!layer) return;
+
+    NSString *key = @"disableUpdateMask";
+    SEL selector = NSSelectorFromString(key);
+    if (![layer respondsToSelector:selector]) return;
+
+    // CoreAnimation 私有位掩码：1<<1 | 1<<4 = 18，表示从截图/录屏合成中排除。
+    NSInteger mask = protect ? ((1 << 1) | (1 << 4)) : 0;
+    @try {
+        [layer setValue:@(mask) forKey:key];
+    } @catch (NSException *exception) {
+        JGHLog(@"主播模式保护设置失败: %@", exception.reason);
+    }
 }
 
 - (void)onPointerMoved:(NSNotification *)note {
