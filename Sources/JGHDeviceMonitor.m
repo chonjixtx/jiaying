@@ -48,7 +48,7 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
     BOOL down;
     if (analog) {
         double mid = (logicalMin + logicalMax) / 2.0;
-        // 摇杆轴：远离中值即视为"按下"，便于映射到方向键
+        // 摇杆轴：远离中值即视为“按下”，便于映射到方向键
         down = fabs(scaled - mid) > (logicalMax - logicalMin) * 0.3;
     } else {
         down = (integer != 0);
@@ -78,7 +78,7 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // 初始化：无需额外设置
+        // 兼容老系统枚举名（kIOHIDDeviceCapabilitiesKey 等可能为弱符号，取值失败不影响）
     }
     return self;
 }
@@ -94,6 +94,7 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
 
     // 匹配键盘、鼠标/指针、手柄（Generic Desktop / Button / Consumer）
     // 用字符串字面量作为 key/value，避免依赖 IOKit 里的 extern CFString 符号
+    // （kIOHIDDeviceUsagePageKey = "DeviceUsagePage"，kIOHIDDeviceUsageKey = "DeviceUsage"）
     NSString *pageKey = @"DeviceUsagePage";
     NSString *usageKey = @"DeviceUsage";
     NSArray *matching = @[
@@ -103,7 +104,9 @@ static void JGHInputValue(void *context, IOReturn result, void *sender, IOHIDVal
         @{pageKey: @(kHIDPage_GenericDesktop), usageKey: @(5)},   // Game Pad
         @{pageKey: @(kHIDPage_Button)},
     ];
-    IOHIDManagerSetDeviceMatching(_manager, (__bridge CFDictionaryRef)matching);
+    // matching 是 NSArray，必须用 SetDeviceMatchingMultiple + CFArrayRef，
+    // 强转 CFDictionaryRef 会触发 -Wbridge-cast 并在 -Werror 下编译失败。
+    IOHIDManagerSetDeviceMatchingMultiple(_manager, (__bridge CFArrayRef)matching);
 
     IOHIDManagerRegisterDeviceMatchingCallback(_manager, JGHDeviceMatched, (__bridge void *)self);
     IOHIDManagerRegisterDeviceRemovalCallback(_manager, JGHDeviceRemoved, (__bridge void *)self);
