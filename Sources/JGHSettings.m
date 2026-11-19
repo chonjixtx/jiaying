@@ -17,8 +17,9 @@
     NSDictionary *saved = [NSDictionary dictionaryWithContentsOfFile:[JGHCommon settingsPath]];
     NSDictionary *defaults = @{
         @"enabled": @YES,
-        // 主播模式：开启后悬浮层对录屏/截图不可见，但本机屏幕仍可见。
-        @"streamerMode": @YES,
+        // 主播模式默认关闭，确保首次启动悬浮窗一定可见；
+        // 用户可在游戏内悬浮窗里手动开启（录屏隐藏按键、本机仍可见）。
+        @"streamerMode": @NO,
         @"mouseSensitivity": @1.0,
         @"pointerSize": @12.0,
         @"customPointerPath": @"",
