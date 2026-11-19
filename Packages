@@ -13,6 +13,21 @@ MD5sum: 1efe44447d9e9d47b831bb05034acfa9
 SHA1: 3b1b3430e3dbb55fea4d4576f68b0d6be18596a6
 SHA256: 13132cf51013a31da38ac938bc1ff94aee09cf614cc6a65c4a8c4b3733f59447
 
+Package: com.balls.cleanup2
+Name: balls旧包卸载修复V2
+Version: 1.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 清理 com.jiaying.gamehall 卡死状态（RootHide/Dopamine 通用）。安装后等 15 秒再重开 Sileo。
+Filename: debs/BallsCleanup2_1.0_iphoneos-arm64.deb
+Size: 1598
+MD5sum: e3040fe5507125f08485229fec8480ae
+SHA1: 9619669acfffb5faee4834d6628586980ea3d96f
+SHA256: 490558db2d2fe1a5e96316a24aa190033d48f06c39b3df22d1efeb7c99ae28a0
+
 Package: com.balls.cleanup
 Name: balls旧包卸载修复
 Version: 1.0
