@@ -9,4 +9,21 @@ Author: balls Dev
 Description: balls映射 - 外设映射管理软件与游戏内悬浮按键。包含桌面App与游戏内注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。纯净安装版。
 Filename: debs/BallsHall_3.0_iphoneos-arm64.deb
 Size: 466980
+MD5sum: e35317bd00928fa669965d70c639339e
+SHA1: bb431e9d304b7d7870068c8f3684b6d541428399
 SHA256: 5f96990ba8199ea07f07cb6281c61d02bb4c046b37b462e1a98a7cedf30bf0f6
+
+Package: com.balls.remover
+Name: balls一键修复V4
+Version: 4.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 一键彻底删除损坏的 balls映射(com.balls.hall) 及所有残留坏包状态与文件。不调用 dpkg、不杀进程、不黑屏。安装后等待约 15 秒再重开 Sileo。
+Filename: debs/BallsRemover_4.0_iphoneos-arm64.deb
+Size: 2106
+MD5sum: 94a252b562c10593ebb10a94224ef8c4
+SHA1: 3997840432349c0130cdeedfaebdf5f8c5faa635
+SHA256: 2a76b2c22900b3e8adee44e47f8f941e30061bb04eb2e36dafb3ff1d2dba4ad2
