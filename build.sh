@@ -32,7 +32,13 @@ build_tweak() {
     unset THEOS_PACKAGE_SCHEME || true
   fi
   make clean >/dev/null 2>&1 || true
-  make package
+  if ! make package 2>&1 | tee /tmp/tweak_build.log; then
+    echo "::group::Tweak build error tail"
+    tail -60 /tmp/tweak_build.log
+    echo "::endgroup::"
+    grep -iE "error:|fatal|undeclared|no visible|only available|duplicate|redefinition|cannot find" /tmp/tweak_build.log | head -20 | while IFS= read -r line; do echo "::error::$line"; done
+    return 1
+  fi
   local deb
   deb="$(ls -t packages/*.deb 2>/dev/null | head -n1 || true)"
   if [[ -n "$deb" ]]; then
@@ -50,7 +56,13 @@ build_app() {
   echo "============================================================"
   export THEOS_PACKAGE_SCHEME=rootless
   make -C App clean >/dev/null 2>&1 || true
-  make -C App package
+  if ! make -C App package 2>&1 | tee /tmp/app_build.log; then
+    echo "::group::App build error tail"
+    tail -60 /tmp/app_build.log
+    echo "::endgroup::"
+    grep -iE "error:|fatal|undeclared|no visible|only available|duplicate|redefinition|cannot find" /tmp/app_build.log | head -20 | while IFS= read -r line; do echo "::error::$line"; done
+    return 1
+  fi
   local deb
   deb="$(ls -t App/packages/*.deb 2>/dev/null | head -n1 || true)"
   if [[ -n "$deb" ]]; then
