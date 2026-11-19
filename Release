@@ -1,17 +1,17 @@
-Origin: balls Repo
-Label: balls Repo
+Origin: Jiaying Repo
+Label: Jiaying Repo
 Suite: stable
 Codename: stable
-Architectures: iphoneos-arm64 iphoneos-arm64e iphoneos-arm
+Architectures: iphoneos-arm64
 Components: main
-Description: balls映射 rootless 软件源
-Date: Thu, 19 Nov 2026 05:06:34 GMT
+Description: 佳影游戏厅 rootless 软件源
+Date: Thu, 19 Nov 2026 14:51:20 GMT
 MD5Sum:
- 2ec88461ccedf58d8193a9562c854c41 634 Packages
- 56576b97954a1adea4cc99047b33320d 511 Packages.gz
+ 1d714936c12bb5897babb33093c18b43 1228 Packages
+ 1e65a9664efea34748cea319eec773fc 746 Packages.gz
 SHA1:
- cf569515f8ec53482c331ddab2a1050736ff894b 634 Packages
- 66031e093d3a22811bc469d0d9928026fa22e24c 511 Packages.gz
+ db31f1fd1117f0fc0edb330107d5c81243db27aa 1228 Packages
+ 88855cdc76e1d42b169c87ee85c5858f2ea99c8b 746 Packages.gz
 SHA256:
- ffb367fa2302765500bdd126f7abefa6ed14cafe01f6338c8fc6ddfe53e7180a 634 Packages
- 42436fe9f83f2abf54ab27d64c96d33fabf21d99af30d020c99ee6b4d2785adb 511 Packages.gz
+ f88428c1b8b9b99f4502e6cb1d8899b10556cf22db3e3bbe5e8f755991005485 1228 Packages
+ 74945da2d42948df75feec5bebaffbec3edecb4d7a623352529e8bbd6084b1cc 746 Packages.gz

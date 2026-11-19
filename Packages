@@ -1,14 +1,30 @@
-Package: com.balls.hall
-Name: balls映射
-Version: 3.0.0
-Architecture: iphoneos-arm64
+Package: com.jiaying.gamehalltweak.rootless
+Name: Jiaying GameHall Tweak (Rootless)
+Description: iOS peripheral-to-touch mapping core for mobile games (rootless / elleKit). Supports Bluetooth/USB keyboards, mice and gamepads with customizable key mappings, floating control panel and in-game touch injection.
+Maintainer: Jiaying Dev <dev@example.com>
+Author: Jiaying Dev
+Section: Tweaks
 Depends: mobilesubstrate
+Conflicts: com.jiaying.gamehalltweak
+Architecture: iphoneos-arm64
+Version: 0.1.2-1+debug
+Installed-Size: 436
+Filename: debs/JiayingGameTweak-rootless.deb
+Size: 68302
+MD5sum: b188d30b741dc0544439d1f2e092d7ca
+SHA256: b3e3e578afa0a1cd4fecd00d176370b0a7ca5a730b1b1d65e7f89205dffaff50
+
+Package: com.jiaying.gamehall.app
+Name: 佳影游戏厅
+Description: 佳影游戏厅 — 外设映射管理软件。添加游戏、配置按键与宏、设置主播模式与鼠标指针。
+Maintainer: Jiaying Dev <dev@example.com>
+Author: Jiaying Dev
 Section: Applications
-Maintainer: balls Dev <dev@example.com>
-Author: balls Dev
-Description: balls映射 - 外设映射管理软件与游戏内悬浮按键。包含桌面App与游戏内注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。修复版本3.0.0。
-Filename: debs/BallsHall_3.0.0_iphoneos-arm64.deb
-Size: 466930
-MD5sum: faf4740c43cd2874310bf82e7bb3c27b
-SHA1: f8ce6d03bf9d2473355883dc70e2f92aaa6e0f63
-SHA256: eedeab0d3d54a8af0047925812a7cd0cd953b1e40f3c0a1bab011c95da3abdb9
+Depends: mobilesubstrate
+Architecture: iphoneos-arm64
+Version: 0.1.1-1+debug
+Installed-Size: 100
+Filename: debs/JiayingGameHall-app.deb
+Size: 17292
+MD5sum: d554cf73fdef90a817f2e36eb2913abd
+SHA256: 332a479c9785481534c87bdd12f3c5a84256c01fb2c32fbd553db474e8d5f463
