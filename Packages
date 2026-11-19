@@ -1,29 +1,12 @@
-Package: com.balls.mapping2
+Package: com.balls.hall
 Name: balls映射
-Version: 2.0
+Version: 3.0
 Architecture: iphoneos-arm64
 Depends: mobilesubstrate
 Section: Applications
 Maintainer: balls Dev <dev@example.com>
 Author: balls Dev
-Description: balls映射 全新安装版 - 外设映射管理软件与游戏内悬浮按键。包含桌面App与注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。
-Filename: debs/BallsMapping2_2.0_iphoneos-arm64.deb
-Size: 467860
-MD5sum: f38b2b10c6efef3c93f00ba35d4ee286
-SHA1: 8bd6fba21ab27e0a992120d475c9f53b01daf765
-SHA256: ce6bd4302cd1febe46e3034f30d785f952c17a09a67db238a8bac96230a1b60e
-
-Package: com.balls.fix3
-Name: balls一键修复V3
-Version: 1.0
-Architecture: iphoneos-arm64
-Depends: mobilesubstrate
-Section: Utilities
-Maintainer: balls Dev <dev@example.com>
-Author: balls Dev
-Description: 彻底清除所有损坏的旧包状态（佳影游戏厅 / 旧修复包 / 占位包），不调用 dpkg、不杀进程、不黑屏。安装后等约 15 秒再重开 Sileo，然后安装 balls映射。
-Filename: debs/BallsFix3_1.0_iphoneos-arm64.deb
-Size: 1786
-MD5sum: 546d06bff659c6d1e604d9979ea9f797
-SHA1: 6e3b1afd87ab4a5ba485c2c85efb760ada693a93
-SHA256: 6d63d5ceb06d05eb1e521222ba59bcd599fce44d012e86261c7bc4062983fc1a
+Description: balls映射 - 外设映射管理软件与游戏内悬浮按键。包含桌面App与游戏内注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。纯净安装版。
+Filename: debs/BallsHall_3.0_iphoneos-arm64.deb
+Size: 466980
+SHA256: 5f96990ba8199ea07f07cb6281c61d02bb4c046b37b462e1a98a7cedf30bf0f6
