@@ -1,0 +1,12 @@
+Package: com.balls.hall
+Name: balls映射
+Version: 3.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Applications
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: balls映射 - 外设映射管理软件与游戏内悬浮按键。包含桌面App与游戏内注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。纯净安装版。
+Filename: debs/BallsHall_3.0_iphoneos-arm64.deb
+Size: 466980
+SHA256: 5f96990ba8199ea07f07cb6281c61d02bb4c046b37b462e1a98a7cedf30bf0f6
