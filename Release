@@ -1,17 +1,17 @@
-Origin: Jiaying GameHall Repo
-Label: Jiaying GameHall Repo
+Origin: balls Repo
+Label: balls Repo
 Suite: stable
 Codename: stable
 Architectures: iphoneos-arm64 iphoneos-arm64e iphoneos-arm
 Components: main
-Description: Jiaying GameHall - 佳影游戏厅 rootless 软件源
-Date: Thu, 19 Nov 2026 00:21:17 UTC
+Description: balls映射 rootless 软件源
+Date: Thu, 19 Nov 2026 00:30:49 UTC
 MD5Sum:
- af22f73bcd4cd6455a8ffcaa5cb5c57a 1035 Packages
- 3553a836c5e3b4fdec73e426891045cf 590 Packages.gz
+ 5a4a90a1da2a4e29a3590c99db6a3191 1021 Packages
+ f456f5ec0a583df435ca68790bb66af7 636 Packages.gz
 SHA1:
- 4a4461865368795dccce8e05814223dc9a20c7dd 1035 Packages
- 15011d8be2ad2b67b307fb0f3cef2136de6b9ab4 590 Packages.gz
+ c3d08460188e76049830639a5cef28cd92beaaae 1021 Packages
+ 6c6d731234b22d93abc1d72d73c3015799f91b64 636 Packages.gz
 SHA256:
- 7be4fc7266cfbe1c4f03586e5c1f97c0a108fe6031ffcc914a3261c9989afd76 1035 Packages
- 831bf4676f75b9c511c68f3d7f321e89260267a1b2968c2b98c4be1e107802ae 590 Packages.gz
+ e345a4bd12201b4b72eff8747cc1b0fd48bf7b568df95e7f13839313572c05e7 1021 Packages
+ 436d21d68d648664f9b063e6d0dc3418b67ab87d01aa5c742efd6905d8866120 636 Packages.gz
