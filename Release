@@ -1,9 +1,17 @@
-Origin: balls
-Label: balls
+Origin: balls Repo
+Label: balls Repo
 Suite: stable
 Codename: stable
-Architectures: iphoneos-arm64
-Date: Thu, 19 Nov 2026 03:57:29 UTC
-Description: balls repository
-SHA256: ec10dd7662866e1b2bd8061327ef6da1230d4e580377181632d6e555f5a77745 540 Packages
-SHA256: c01723d24e2db20222b92a2c5b6e023cd6bcdf3f8037a9419aa3bf80eac434bc 451 Packages.gz
+Architectures: iphoneos-arm64 iphoneos-arm64e iphoneos-arm
+Components: main
+Description: balls映射 rootless 软件源
+Date: Thu, 19 Nov 2026 04:04:00 GMT
+MD5Sum:
+ d458cc43126cda63448d10d5fb7d1692 540 Packages
+ f6663d4fe21224e8151d184bfc713732 451 Packages.gz
+SHA1:
+ e3690c7de11c5469314edc3a5c0e7b2c8f84f8c4 540 Packages
+ 4172bddfb26cf512ce1221461b1f6c790be17148 451 Packages.gz
+SHA256:
+ ec10dd7662866e1b2bd8061327ef6da1230d4e580377181632d6e555f5a77745 540 Packages
+ c01723d24e2db20222b92a2c5b6e023cd6bcdf3f8037a9419aa3bf80eac434bc 451 Packages.gz
