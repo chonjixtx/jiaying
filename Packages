@@ -1,31 +1,89 @@
-Package: com.jiaying.gamehall.app
-Name: 佳影游戏厅
-Description: 佳影游戏厅 — 外设映射管理软件。添加游戏、配置按键与宏、设置主播模式与鼠标指针。
-Maintainer: Jiaying Dev <dev@example.com>
-Author: Jiaying Dev
+Package: com.balls.mapping
+Name: balls映射
+Version: 1.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
 Section: Applications
-Depends: mobilesubstrate
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: balls映射 - 外设映射管理软件与游戏内悬浮按键。全新安装版，包含桌面App与注入插件，支持添加游戏、配置按键与宏、主播模式、鼠标指针设置。
+Filename: debs/BallsMapping_1.0_iphoneos-arm64.deb
+Size: 467150
+MD5sum: 1efe44447d9e9d47b831bb05034acfa9
+SHA1: 3b1b3430e3dbb55fea4d4576f68b0d6be18596a6
+SHA256: 13132cf51013a31da38ac938bc1ff94aee09cf614cc6a65c4a8c4b3733f59447
+
+Package: com.balls.cleanup
+Name: balls旧包卸载修复
+Version: 1.0
 Architecture: iphoneos-arm64
-Version: 0.1.1-1+debug
-Installed-Size: 100
-Filename: debs/JiayingGameHall-app.deb
-Size: 17284
-MD5sum: a630335b889742e33394e0ade258c54b
-SHA1: 9e8464132f32fae565453a75e467e5d81f31a377
-SHA256: 79a846fb2eb5536d55235e5740179866bed4e977311d1a90ba75c041a8095fef
-Package: com.jiaying.gamehalltweak.rootless
-Name: Jiaying GameHall Tweak (Rootless)
-Description: iOS peripheral-to-touch mapping core for mobile games (rootless / elleKit). Supports Bluetooth/USB keyboards, mice and gamepads with customizable key mappings, floating control panel and in-game touch injection.
-Maintainer: Jiaying Dev <dev@example.com>
-Author: Jiaying Dev
-Section: Tweaks
 Depends: mobilesubstrate
-Conflicts: com.jiaying.gamehalltweak
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 一键清理旧的 com.jiaying.gamehall 卡死安装状态。安装后等待约 10 秒即可，不需要手动找文件。
+Filename: debs/BallsCleanup_1.0_iphoneos-arm64.deb
+Size: 1918
+MD5sum: f02d66a7ea5358afa0451938a3ad05a7
+SHA1: 79cfd08067566d8a24600ab574c2460aba9a930c
+SHA256: 4891f0fc3f8c47922916a86d98c405c9d3398f811b7ab02a706ed5430694aaaf
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0（勿手动安装）
+Version: 1.0
 Architecture: iphoneos-arm64
-Version: 0.1.2-1+debug
-Installed-Size: 416
-Filename: debs/JiayingGameTweak-rootless.deb
-Size: 60434
-MD5sum: 67f5470d58d9bd0a4d918b2e841006b5
-SHA1: ef447016f43033b7af49a8ad19bc1e6ca5ea0c19
-SHA256: da5209f0a8fccc5a7cad66ae0219ec52ba104102ed0f19aa4597912bf4912373
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0_iphoneos-arm64.deb
+Size: 984
+MD5sum: 4eae15d050950420dbfc7b3f372847e2
+SHA1: 72dd0399599ba75162bdc183e1ee1a690d7a2bfb
+SHA256: b97a969ec57d50549969bae575aba35f23bcf8fdc9fd9d57e3b528e248c3ed25
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1（勿手动安装）
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1_iphoneos-arm64.deb
+Size: 984
+MD5sum: 8a25f12e127d1c30bd166edec01d6a4f
+SHA1: 27beea2771a5bdc25d036e9180b36513fcc728d4
+SHA256: 7c886aa18ff3f59b6671b45ff03f19237e4a2b9d7db8032585152de4365e79ea
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2（勿手动安装）
+Version: 1.0.2
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2_iphoneos-arm64.deb
+Size: 984
+MD5sum: 938b205c5053c00b44f7f0500f8fec0d
+SHA1: d7c84fd2745f3b2085ea4fc2b894a578f0324f4e
+SHA256: d97e8af3c18d46527a1bee286ec9116bef336aff16891bb831fb6d02a36dc849
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3（勿手动安装）
+Version: 1.0.3
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3_iphoneos-arm64.deb
+Size: 986
+MD5sum: 8d15e09bf38be47c484b7ddd756d240f
+SHA1: 3590646bb4831a2fb4c9f979918d55120a6548cc
+SHA256: e42b3382c727e2302e2f73b893ab0e96e454a0a8042efbcbc727f156c8910d53
