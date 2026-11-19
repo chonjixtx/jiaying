@@ -44,6 +44,36 @@ SHA1: 72dd0399599ba75162bdc183e1ee1a690d7a2bfb
 SHA256: b97a969ec57d50549969bae575aba35f23bcf8fdc9fd9d57e3b528e248c3ed25
 
 Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0（勿手动安装）
+Version: 1.0
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0_iphoneos-arm64e.deb
+Size: 982
+MD5sum: a8be23068a796965d689188fcb5a9b1f
+SHA1: 111b2845b952ee9376f5c33689f473730025778a
+SHA256: 0fdd4778e9b118b67858206c94e02bfaf5c168202e2b8c86e26bd8ca3d34f1b8
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0（勿手动安装）
+Version: 1.0
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0_iphoneos-arm.deb
+Size: 980
+MD5sum: 8fd653330688a6b5e15473b425070795
+SHA1: 23652e56a6d00a43a7f1db4b3d9ad306351e8efa
+SHA256: 26a8b08fc7ae6d80768dd3cae74a51353f4dd169f7e1e360febb62f53136eeac
+
+Package: com.jiaying.gamehall
 Name: 旧包状态修复占位 1.0.1（勿手动安装）
 Version: 1.0.1
 Architecture: iphoneos-arm64
@@ -57,6 +87,36 @@ Size: 984
 MD5sum: 8a25f12e127d1c30bd166edec01d6a4f
 SHA1: 27beea2771a5bdc25d036e9180b36513fcc728d4
 SHA256: 7c886aa18ff3f59b6671b45ff03f19237e4a2b9d7db8032585152de4365e79ea
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1（勿手动安装）
+Version: 1.0.1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1_iphoneos-arm64e.deb
+Size: 984
+MD5sum: 083914aba7ccbbb88390b623fb2c9c08
+SHA1: 730e280a7b7fd412438d2b8bceb7f1899e0b54e7
+SHA256: b2d60b7cfc58da219d606fbb111761b44aca4d86f5d9508653ee743b7220fd5a
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1（勿手动安装）
+Version: 1.0.1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1_iphoneos-arm.deb
+Size: 980
+MD5sum: 78572393ab4da2e323fb087af1d256ee
+SHA1: e10aee2d9b722e5d3ef7c62a87d141e9d984c585
+SHA256: a7d753a3e4a4f5635a6324b17cc94f6f73db53bd6309eee4657d60c62435a062
 
 Package: com.jiaying.gamehall
 Name: 旧包状态修复占位 1.0.2（勿手动安装）
@@ -74,6 +134,36 @@ SHA1: d7c84fd2745f3b2085ea4fc2b894a578f0324f4e
 SHA256: d97e8af3c18d46527a1bee286ec9116bef336aff16891bb831fb6d02a36dc849
 
 Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2（勿手动安装）
+Version: 1.0.2
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2_iphoneos-arm64e.deb
+Size: 984
+MD5sum: 3e0bda0c5d785ac91ecbe4da34554e2c
+SHA1: 42cdb28fb2c6ad84729966bd7569b2b445adea0a
+SHA256: fcb727766dd738221d5b97e175a1bfd779741ef66b3cc5fa942b49939cf6dd2d
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2（勿手动安装）
+Version: 1.0.2
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2_iphoneos-arm.deb
+Size: 980
+MD5sum: 38d8c2ea96f50aafd87490cd27b500cf
+SHA1: 936a2c5158ab259ad6e60e7b83dc9d0344caf688
+SHA256: 9eaa3c0c22dd1c8a419fa0ccf5bd04a34b682c9ae8e6610765b5b638457f3767
+
+Package: com.jiaying.gamehall
 Name: 旧包状态修复占位 1.0.3（勿手动安装）
 Version: 1.0.3
 Architecture: iphoneos-arm64
@@ -87,3 +177,1023 @@ Size: 986
 MD5sum: 8d15e09bf38be47c484b7ddd756d240f
 SHA1: 3590646bb4831a2fb4c9f979918d55120a6548cc
 SHA256: e42b3382c727e2302e2f73b893ab0e96e454a0a8042efbcbc727f156c8910d53
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3（勿手动安装）
+Version: 1.0.3
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3_iphoneos-arm64e.deb
+Size: 984
+MD5sum: a2620dc6bef3a968a7b37ae31df23b64
+SHA1: 80c87d3020b95dbbc14acda836b221291b224f95
+SHA256: 2f17c542f4dd02c3e30dd3e1d70e20f1af2fbc1f86689de12b8e04a389700247
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3（勿手动安装）
+Version: 1.0.3
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3_iphoneos-arm.deb
+Size: 980
+MD5sum: 3f0374c5de80c2404d3407cb6a03b229
+SHA1: f83a2e7c4b8255a7477306c7a4193128db6c2e80
+SHA256: e5e0814e28b967eb860be21e5b4160c2ba4f7c445931c5a16ace17b2f20edb89
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0-1（勿手动安装）
+Version: 1.0-1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0-1_iphoneos-arm64.deb
+Size: 984
+MD5sum: c6a2f1b1fee0b66c3db92a4a8b4a6462
+SHA1: 95767f41120cf0df328ba202b9bcae0bfef503f3
+SHA256: d2e4fe8460730aaccc108636d3e9735cd901975b82b380a783ba15bc23e43d39
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0-1（勿手动安装）
+Version: 1.0-1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0-1_iphoneos-arm64e.deb
+Size: 984
+MD5sum: 8dd4481da849870ab9e3ff459def6af8
+SHA1: 40d1c1002a1a4ba40279360e3a47ba0809f3b220
+SHA256: e336bbd7f4b05b09cd9556a022ae83eb6cd12ea678e9159b58c17615d476e302
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0-1（勿手动安装）
+Version: 1.0-1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0-1_iphoneos-arm.deb
+Size: 980
+MD5sum: b798fac258d0b398389cbfaf73e7d3ed
+SHA1: 1d5d4ac47d8cd4aa7a2b89ef7e884e17427d5a89
+SHA256: ea1d9a5e487668307e1b4b388900d0e5122f9435bf326abc5313a6bd2e019f1f
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1-1（勿手动安装）
+Version: 1.0.1-1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1-1_iphoneos-arm64.deb
+Size: 986
+MD5sum: 4db1fd65cb0330766ae2774ddaa9b635
+SHA1: da844fb16934bf1d839e7b809429082776271a84
+SHA256: e02ae7cc0f1e4895e78f4ec1830414a8089e233c8f845f4346fc104b0e3cc383
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1-1（勿手动安装）
+Version: 1.0.1-1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1-1_iphoneos-arm64e.deb
+Size: 986
+MD5sum: c701d59962b8ef983c23800e0e3a4417
+SHA1: ee8e700bfef13bf3cf6fe85db404159892a3acd5
+SHA256: 42b39d3e947b1e7de446080b0831cb2784c013446410cdc357e08f16147a1598
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1-1（勿手动安装）
+Version: 1.0.1-1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1-1_iphoneos-arm.deb
+Size: 986
+MD5sum: 15627f46be1008ca711272088a46f609
+SHA1: c26fd1b7906b0930fdf30103519f4ac33219256d
+SHA256: ba332fe2121a97566578818ed86de8acc2a40dab4589c7b87061aa63c38ddae4
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2-1（勿手动安装）
+Version: 1.0.2-1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2-1_iphoneos-arm64.deb
+Size: 986
+MD5sum: 181e2d811330756895edb71f8f10f2c4
+SHA1: c4eeef22a301957b897702a9a1555b34bd3ba7ea
+SHA256: 5b4420c716378bdf36d1f2a57de83df8457d5677e1e86507cb5e8ffede6d5131
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2-1（勿手动安装）
+Version: 1.0.2-1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2-1_iphoneos-arm64e.deb
+Size: 986
+MD5sum: b1c9fa116730af3f2be91b2dc7a2c44b
+SHA1: 53c7138ce8e7d50580845c64fa974a2b7ec0b14c
+SHA256: 297dd1c6fd113c1975550b03d65de1e6ba4b3ebcd5270e329a4f16ac056e8ec3
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2-1（勿手动安装）
+Version: 1.0.2-1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2-1_iphoneos-arm.deb
+Size: 986
+MD5sum: 8180e2d817b996cde2e5fc3ae7ddf96d
+SHA1: fd4aa90610f4e59b4e0ae023760d88c36bcbc296
+SHA256: 34a58db01b2cb118731acaa431004cd2a5dfb1d4e7b5c9a3ec4789318351b396
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3-1（勿手动安装）
+Version: 1.0.3-1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3-1_iphoneos-arm64.deb
+Size: 986
+MD5sum: 80787acc97dfd500073f6092ddbb1799
+SHA1: b12b346dcd653c309b661ecdfeacdd3b89065592
+SHA256: 5b809e956886011e96a1d037199fa178316d655d905b65aed64f1a65e2317b60
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3-1（勿手动安装）
+Version: 1.0.3-1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3-1_iphoneos-arm64e.deb
+Size: 986
+MD5sum: ee2b6b607f99c7df922afcc5a528b05d
+SHA1: 4e27b3ec276cddf92abd2d73acb33e2e9a924e58
+SHA256: 194daee4dc9452fa9014ec51f7a02037c57ad5829193a4b314dd6c6162387cf2
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3-1（勿手动安装）
+Version: 1.0.3-1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3-1_iphoneos-arm.deb
+Size: 986
+MD5sum: 3506966a9780524493f005be59670cae
+SHA1: 339185393b7bb80bab14f366be6e1793f40301a3
+SHA256: 8a3c1ac9243a26f70c4a5dcbc1a65dc58132a73ffe31d0f7b93a545b2f6ee39b
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0+debug（勿手动安装）
+Version: 1.0+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0_plus_debug_iphoneos-arm64.deb
+Size: 990
+MD5sum: ae40da2b7999167bdf98a2dbb99f7849
+SHA1: b9ba5625597b94ee87382df5e420c29dedb52be8
+SHA256: 38ef77d098bc5d416b23301a71a49e7d53473451e9225f257031c5199df12ac6
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0+debug（勿手动安装）
+Version: 1.0+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0_plus_debug_iphoneos-arm64e.deb
+Size: 988
+MD5sum: 185e93f8ef3ac5d0075eba203d2b2151
+SHA1: 3455620620c4607b29030ca8e8c8c289e1f2aefb
+SHA256: e5c8f2eb06ecec8582f54c5cea12e9bacbec964ce3be02102bb3180ae8ef8ed1
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0+debug（勿手动安装）
+Version: 1.0+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0_plus_debug_iphoneos-arm.deb
+Size: 986
+MD5sum: a9872b071199212c36938df45d97198e
+SHA1: d1f719dc8b4e9a5e17285fe4a51bc3795c87fbbf
+SHA256: 71a4d68bb9fa8176bd7b82d538709d1d9c6824308516249bed2cec9f104bc83c
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1+debug（勿手动安装）
+Version: 1.0.1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: cc18284efc521f83a17c3a5ce6f03cb0
+SHA1: cd8aa87476cd7d649f70b68b8ecb636f8cd341ea
+SHA256: e5aeb62e492ea42d108194be6f52871c49f08d72a8d2cb2f17ae1d5e31528517
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1+debug（勿手动安装）
+Version: 1.0.1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: 89c922940041d69cdf8c903d6edc9842
+SHA1: 83c0cc99b40d011afc26fc2acd95d36b3a83f81a
+SHA256: 9c47238eab3c0cf1cd80b150f5004b78a3d5938fcc7c0603da12f7f8d5c0b0a7
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1+debug（勿手动安装）
+Version: 1.0.1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1_plus_debug_iphoneos-arm.deb
+Size: 988
+MD5sum: c8268c018c7a8c39fcf8cfe22e6b8a96
+SHA1: e2c7f164413ff89be6595a3999aeea0f2196e1ea
+SHA256: 140da6a3a27ab9b4db0766e0c24d87775cd98c0e68fda09e030458424cc89e4e
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2+debug（勿手动安装）
+Version: 1.0.2+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: cf2eb4b3d60128f809ed2e9debde2426
+SHA1: 957a5eac1605164262ca3ee6890c087941cbdfa1
+SHA256: ac05d4cbb35d0b5a997c59f8cc68080c018b1564c15fcf82777acbef21d80844
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2+debug（勿手动安装）
+Version: 1.0.2+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: 9f5a0394c6c071241b91a130bfc69648
+SHA1: 25765b306172defa62cd57be18b9fd219d4f1ace
+SHA256: 80c3f14d0c3beb3591b52ceb5adddfe94d92eb8c4a405b83704e1068a4a535f1
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2+debug（勿手动安装）
+Version: 1.0.2+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2_plus_debug_iphoneos-arm.deb
+Size: 988
+MD5sum: 50e87fba7c7be0d44bfbbf2c54061bb5
+SHA1: d84a4ac3b577be3a33ef54a9396ca94c41aacf6d
+SHA256: 7f195fda8c1549bd7abe586796e2c4dd4cfe08eb479650168ca56cf01759d7b6
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3+debug（勿手动安装）
+Version: 1.0.3+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: d7fdf090f210eafb54952785cf0df2cb
+SHA1: 4e3b555ec85663dcc1ce26c2b4d3d86c1720d982
+SHA256: 7c685efd6b71996d01b74aa6abd6acd0457307f9ff3bbcc0fdf477bbcf20d776
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3+debug（勿手动安装）
+Version: 1.0.3+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: 2a951feabd4ef293bf43fa924032a277
+SHA1: f1fe2782dfef9d1e65bc647a7d8909e622bce0d6
+SHA256: b3325936067e5060e5852ce91a3e9351ad1fd788f21760efb11e56d5e8aa0066
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3+debug（勿手动安装）
+Version: 1.0.3+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3_plus_debug_iphoneos-arm.deb
+Size: 988
+MD5sum: 704d7373191735a181879a83f46994db
+SHA1: 9f5f82abccd4327eb0a57734b5d689d8160eaf84
+SHA256: da0daf7d5c463031a776b27035b1a8b9d8757daf3e4fb9c12b6a3949189b8060
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0-1+debug（勿手动安装）
+Version: 1.0-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 472f6c2166fc44f8ef2e0822775a974b
+SHA1: 12d16067e119163a1ff5c0659340c24c910ce2c9
+SHA256: 4f1b42171e870bbc756730568f2866f4e20180f8b478e0146b71575f7ddd98dc
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0-1+debug（勿手动安装）
+Version: 1.0-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: c0af6275ba0b0f9fdd54fd7811b72fa8
+SHA1: c52aeafd4f1fa33ca8648b284d363ec14f0e44b2
+SHA256: fe47c658f5c6de4967b1505e82be0677b2bc78d75452ad6e3aff0da06b50afd2
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0-1+debug（勿手动安装）
+Version: 1.0-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0-1_plus_debug_iphoneos-arm.deb
+Size: 988
+MD5sum: 01238454f60aee6926f711e340df61bd
+SHA1: 94ff36561b36f6340084dd08610519ef47493941
+SHA256: c8091c2c2a6a355deb37c912164b72749959c1141a0e2486c535d84d5b363f75
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1-1+debug（勿手动安装）
+Version: 1.0.1-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 0fc9a619d9d7c2bcec59e732f1524c3b
+SHA1: 098134502ea5e109e2f1eb4fb96d68d79cc01a5b
+SHA256: aaf847c29ae8b84a07a6913b84ca5d4ca5ccad5c832d3f1c70cc10882c1f62b3
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1-1+debug（勿手动安装）
+Version: 1.0.1-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: ee26bde9f9cff5c78d079f8268ee51a5
+SHA1: 5a9adbdfc131a7327be9caad55529d5ca08adac5
+SHA256: f5e7e9d301767ee680b2b3123d26d991f63c9c54d06738dd6a0a45b1521f355d
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.1-1+debug（勿手动安装）
+Version: 1.0.1-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.1-1_plus_debug_iphoneos-arm.deb
+Size: 990
+MD5sum: 0332ea4e0f5aed4ecb081e990eadc6c8
+SHA1: 5de26a62dccf13b9ca808c6bf7df637df49a1bd0
+SHA256: 4dbd9b49b4de104e81ef80f78c13b058e28133e3a88cf0b76115889cf272ac6c
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2-1+debug（勿手动安装）
+Version: 1.0.2-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 559420ea2b7b59beded0d38c785f81be
+SHA1: b6dad286c9eaee5eef5b5a9794ad872c0954d54b
+SHA256: 071aeaa94ca4700961af9bd0856c461f9f904ce1aad9d2166886bb4b5014c1db
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2-1+debug（勿手动安装）
+Version: 1.0.2-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: df2d6fcc1a66e34a8662d35a54cbcb99
+SHA1: 690435aef9e881e192310c243ad6cb743795b26d
+SHA256: f666a5568db9c0314df87db835dd16afebf05499a74ef6a937efa5134035a61b
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.2-1+debug（勿手动安装）
+Version: 1.0.2-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.2-1_plus_debug_iphoneos-arm.deb
+Size: 990
+MD5sum: 87ab617173b936d02a21f1c358d90a0a
+SHA1: ca76465bea6287bff2f6b49841bea49b0666aefe
+SHA256: 6cefefb2606d1428ab16aa404595ebbb5176849ffe91871f9d10c3c58128b586
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3-1+debug（勿手动安装）
+Version: 1.0.3-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 8ed7cbf34b2e6afcc902a4ed41ca5b69
+SHA1: d7776bd2afd2a43d8ab3db52bd1db692d54bf160
+SHA256: 7e658d3819bd84daa7eb34157e1226e98f66ad7c2fc69ae7209ca60b80763875
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3-1+debug（勿手动安装）
+Version: 1.0.3-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: df58058fce357098b011ad46c0eb5c29
+SHA1: ea6ca08692ed47a36615afeb123b3bc2661f96b1
+SHA256: 24868425c3a939351ea95fdfb0110339121c9d6ce20e347dbbdc922464a2eb54
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1.0.3-1+debug（勿手动安装）
+Version: 1.0.3-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1.0.3-1_plus_debug_iphoneos-arm.deb
+Size: 990
+MD5sum: aa87eb41a3d9f5e0655c1c6ea7cee547
+SHA1: 14c903ff2327f908a88d8e21ce10926f7cd4aa12
+SHA256: c4f4ada8b190b0c26c1405dd17283279bd3a901d1e8a3e12c0cc25f862bd7edd
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.0（勿手动安装）
+Version: 0.1.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.0_iphoneos-arm64.deb
+Size: 984
+MD5sum: 4944edeb14882ddf54e27cb4fb61f1d8
+SHA1: f25355a17dc8729c7db43179d5ae2a3ccd489f84
+SHA256: 2ad402b349a655e1d880cc59e6bec5574befaa6fc5db1fd42b3fafb6b9c447e0
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.0（勿手动安装）
+Version: 0.1.0
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.0_iphoneos-arm64e.deb
+Size: 984
+MD5sum: 1d36cd03ea607ea6932b5e4b0734a133
+SHA1: f5b014128ea88b4465d1d1b6870dd0ad299ab6a8
+SHA256: babe5037da49e50cf424292f16d47d5f52b124ba7229424b97b1d4e744d16202
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.0（勿手动安装）
+Version: 0.1.0
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.0_iphoneos-arm.deb
+Size: 980
+MD5sum: a4b1dae064ce37e600f118b348db5160
+SHA1: 314773f3d25a4b36289211acdbc2018f21183df1
+SHA256: e709f2533008d875a027013ba3e36dd822516e84c5a09c9c16f2ccecced5dce9
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.1（勿手动安装）
+Version: 0.1.1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.1_iphoneos-arm64.deb
+Size: 984
+MD5sum: 0eb1b5165c05c2abd6601021da3a9a56
+SHA1: 44c7f0d7b9add4ed778604c4487fbeabd4bead53
+SHA256: aa9e405c2cf6a30f36f5873f2c4b694ba4541fa550e8dff8aefde9580d1a887a
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.1（勿手动安装）
+Version: 0.1.1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.1_iphoneos-arm64e.deb
+Size: 984
+MD5sum: ca3446c5cc4feae7f3b8a8d5ffff9219
+SHA1: 546c2cc96a93c3df91295ff0c484657e27094a69
+SHA256: c720489ecb809c202d40e803909d9fd56d473af34e1264014253e4baaf938ebb
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.1（勿手动安装）
+Version: 0.1.1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.1_iphoneos-arm.deb
+Size: 980
+MD5sum: 0cd565676a1e37cf780a77ae8da1c29f
+SHA1: 783c3da3d6695d0fe5d33376d1c9af4d2ceaa4d7
+SHA256: b2af705e39d551929cc9cadd72da77c98a3b7566bc25a0b08a9643bf0cbfc257
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.2（勿手动安装）
+Version: 0.1.2
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.2_iphoneos-arm64.deb
+Size: 984
+MD5sum: 354c53a7a762aaadcf2aaf6878ae91f0
+SHA1: 5294886695007e96f81a24553e4c39d5b9365300
+SHA256: 8624c910946a8078bdb6b26f4c275eab8357a3135c46b167e5368bc23e744a34
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.2（勿手动安装）
+Version: 0.1.2
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.2_iphoneos-arm64e.deb
+Size: 984
+MD5sum: e770b8164b12e0c76208128afb4ad87f
+SHA1: 05a6be5181d22727225e1da4aeb8e1466486bd18
+SHA256: a87d72da8191b7caae827df5fb9b99cdafc23789441d9d920bd2efb9d83c7262
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.2（勿手动安装）
+Version: 0.1.2
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.2_iphoneos-arm.deb
+Size: 980
+MD5sum: a7ce82e2e899dec6bf6e1ca7cc0c7182
+SHA1: 80e6d10dba4cd3d4cb308175d16370d3a8aeff52
+SHA256: 4fe0f7416fc751aa86a221c0147b52ed1f881d2f9fa7effa480fe7902d6ffdd5
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.0-1+debug（勿手动安装）
+Version: 0.1.0-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.0-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 8b562c48722aa6f1796b623280f21c72
+SHA1: 1b3a49c27ed5f0dcf1bd41e1a567c5c34be33c97
+SHA256: 43a240aa04d52636d6bb63a48240660779f2d03a2d36f176144ac28155fc9f85
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.0-1+debug（勿手动安装）
+Version: 0.1.0-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.0-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: 10438b3d3d96d6ec3952e5b6a24e37f8
+SHA1: 46587d7d2461fdc7cd5b2fbbfa5e436244f087cd
+SHA256: b13d1d4abecde5f639aaa7c9fd42bb4f86bc2a4c4e2a799278adc1d601d0ca1f
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.0-1+debug（勿手动安装）
+Version: 0.1.0-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.0-1_plus_debug_iphoneos-arm.deb
+Size: 990
+MD5sum: d93f272b554883e61857bd3c7e96d9bc
+SHA1: 3d2d99417e33f8e48552b6a742933c808f887323
+SHA256: 237c2819c9fb6659b5cb14cf8d96b53fb5a173043e2db1db865891abf1d8612e
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.1-1+debug（勿手动安装）
+Version: 0.1.1-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.1-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 9a31f9de2aa167a8039206d2e2a2ce48
+SHA1: fee1feca7ec4f331ee34d6337a17cb51cfd2e46a
+SHA256: 71c0368bbff5540a797add7334ce04a8afa2dba6f4049b6e98431b1e81e53ebe
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.1-1+debug（勿手动安装）
+Version: 0.1.1-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.1-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: 3d9cad8a558895aea0b32db4bb66dff8
+SHA1: b044c701aa72fd80339c037a16e9a54f4dd933de
+SHA256: ec03587a1be6bc37276546954ad0c2a6cb2f6ba7ebfa0d518265449736070ce1
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.1-1+debug（勿手动安装）
+Version: 0.1.1-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.1-1_plus_debug_iphoneos-arm.deb
+Size: 990
+MD5sum: 4a91c7983eb37130eb46590654377eef
+SHA1: 1a32420c1a19c66fbe150c9d1c791e4a1f10db17
+SHA256: d397662f2512f36051a0a343c4fe184f65d60d74db8b6cc40a68b455281b0855
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.2-1+debug（勿手动安装）
+Version: 0.1.2-1+debug
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.2-1_plus_debug_iphoneos-arm64.deb
+Size: 992
+MD5sum: 63794b560bd4d8498effee950b91a78f
+SHA1: c4645c60ca485fcb262f7442cbc26f1b694663c7
+SHA256: af8a554a22bed5b0a40ed39edd1be9b0a8693585de9dda3063fbf2bf03c61e0b
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.2-1+debug（勿手动安装）
+Version: 0.1.2-1+debug
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.2-1_plus_debug_iphoneos-arm64e.deb
+Size: 990
+MD5sum: ca22ed0d34180166b0a16b0e5a828bae
+SHA1: b9ff04a50449389dd74b2406b27b0e8dbb4b5dd0
+SHA256: 92df647c8886ec76d4e15ea9e4d2b27f4f2d9938bd3d30e2ead60d1ed8705f1d
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 0.1.2-1+debug（勿手动安装）
+Version: 0.1.2-1+debug
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_0.1.2-1_plus_debug_iphoneos-arm.deb
+Size: 990
+MD5sum: 872e5b4c9ecbef902bd4357ba434560c
+SHA1: 6160640e3fdb4c621c3d8df8cdc3feaf2b17509a
+SHA256: d7bebddd0a255efd70f17fb0b40d646904523d01c8dc4672dbdcb040a886d2e8
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0（勿手动安装）
+Version: 1:1.0
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0_iphoneos-arm64.deb
+Size: 984
+MD5sum: f1fb0dfba28c69b407ed08480ce30141
+SHA1: be067755ecf9ba91a4b1ec9bf5839d09affed2d0
+SHA256: 51734869ddfe674c1498b1c067bc64fd36377c99aa0367741ca9021c63759f25
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0（勿手动安装）
+Version: 1:1.0
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0_iphoneos-arm64e.deb
+Size: 984
+MD5sum: 9cc3ce758132b60b1c49846b2296cbd8
+SHA1: 897fde51294133d9cd8cbb616de4386e283972f1
+SHA256: ff0898032076232f2138a3fb17bac1c0ad9e10935f308cfa8ee067d2b0a10a72
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0（勿手动安装）
+Version: 1:1.0
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0_iphoneos-arm.deb
+Size: 980
+MD5sum: e344c03592c196a6cdb6bd9fe49ffba9
+SHA1: 5dc3c3806556e0d06c5ac82f05e4b47f8ee148d6
+SHA256: 5d3416e574b2308a3c5cc37f830fed7f88867ef09cf2f30c8a4436b21c11984e
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.1（勿手动安装）
+Version: 1:1.0.1
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.1_iphoneos-arm64.deb
+Size: 986
+MD5sum: 78a0c458cdd764830c768045458356cf
+SHA1: cf973eaf27c5b13393201aa2e068c95e6f72634b
+SHA256: 282ef7d27fe8a6b544882a1eafb44d9bbb5dda57aafa84976036b796bd05a5ad
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.1（勿手动安装）
+Version: 1:1.0.1
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.1_iphoneos-arm64e.deb
+Size: 986
+MD5sum: 7c4b67e0a78e2d363cfa021dc9761812
+SHA1: f0c96884ec705f299a7de6f167d134d1d65ede78
+SHA256: 343880ffd1e9e592ac4410bfae7a68e252349a2db38ebd9ca012ff063d6b634c
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.1（勿手动安装）
+Version: 1:1.0.1
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.1_iphoneos-arm.deb
+Size: 986
+MD5sum: 91fd053f9532eef01af3d0c0f40749ff
+SHA1: 025f5daf730f1a791362c7269d504f391611b1d4
+SHA256: 4c7c1f21c2abf0c39dca3a71d816bee1bf7de86cd2d2f8a770a1102aa01169eb
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.2（勿手动安装）
+Version: 1:1.0.2
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.2_iphoneos-arm64.deb
+Size: 986
+MD5sum: a83fd06d2addf3b4f1834b74936c858e
+SHA1: f69bee3e9a6145a7f2a9096093a8aacb4577406e
+SHA256: 1e7edf6d7744989f6a01d36ba5369b38c2da8b5a25bf8f1252526b99d0b1e486
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.2（勿手动安装）
+Version: 1:1.0.2
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.2_iphoneos-arm64e.deb
+Size: 986
+MD5sum: 94e9ab741c279a3581c5e20a5488a3b5
+SHA1: 549fc4a44ab1ee8a8767463b33b984d9bc7d5df7
+SHA256: 070155c237dd2391ba8f06cfae05d9280116860535a7efd1fb989fd5115d3298
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.2（勿手动安装）
+Version: 1:1.0.2
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.2_iphoneos-arm.deb
+Size: 986
+MD5sum: ddb6b1bcc9b3574197e3e112f710807a
+SHA1: f36cd9986c837ab05d7f10eae2e3a5b253265fe1
+SHA256: 0364e6f4d78fee1dd49117323f4de2d905eed5490c16797c2fcc4be3f571433e
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.3（勿手动安装）
+Version: 1:1.0.3
+Architecture: iphoneos-arm64
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.3_iphoneos-arm64.deb
+Size: 986
+MD5sum: d31b71b45af1dea14418e312c67ec878
+SHA1: 933386243c6f2db65b6c857ffa4c8e80e1c025f5
+SHA256: 426ab1313f64eec511c6bb1f95aaaf3d0934a5bf6dc7c987071c308bbe021b5a
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.3（勿手动安装）
+Version: 1:1.0.3
+Architecture: iphoneos-arm64e
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.3_iphoneos-arm64e.deb
+Size: 986
+MD5sum: 5d65a2c9114f47a85f796afb54286cc3
+SHA1: 93ebec3c04ba422a1cca91543e6812344be25db1
+SHA256: f7c39f6a293a683586172f73671443bc43a6a86a0624db5888c91dcaf959a37f
+
+Package: com.jiaying.gamehall
+Name: 旧包状态修复占位 1:1.0.3（勿手动安装）
+Version: 1:1.0.3
+Architecture: iphoneos-arm
+Depends: mobilesubstrate
+Section: Utilities
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Description: 仅用于让 Sileo 找到 com.jiaying.gamehall 的历史归档，解除卡死状态；请勿单独安装此占位包。
+Filename: debs/JiayingGameHall-stub_1_1.0.3_iphoneos-arm.deb
+Size: 986
+MD5sum: 4c4e6981e35c808b07020b3be64e4310
+SHA1: 9b8f6c0d6f0f7ccf1b5befc4ac9a1391d3130c00
+SHA256: 27824592ab4bd1eda598d5b8a974a21e57925da0594ba83b1269261b7ebb5f67
