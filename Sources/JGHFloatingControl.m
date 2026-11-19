@@ -199,9 +199,7 @@
     [self.editorPanel addSubview:self.tuneLabel];
 
     UILabel *tip = [[UILabel alloc] initWithFrame:CGRectMake(12, 382, ew - 24, 78)];
-    tip.text = @"悬浮按键=绑定键盘按键；鼠标=像电脑一样控制指针。
-主播模式：录屏里看不见按键，本机照样可见可用。
-设置在此悬浮窗内调整，实时生效。";
+    tip.text = @"悬浮按键=绑定键盘按键；鼠标=像电脑一样控制指针。\n主播模式：录屏里看不见按键，本机照样可见可用。\n设置在此悬浮窗内调整，实时生效。";
     tip.textColor = [UIColor colorWithRed:0.75 green:0.78 blue:0.82 alpha:1];
     tip.font = [UIFont systemFontOfSize:10];
     tip.numberOfLines = 4;
