@@ -36,16 +36,17 @@
 @property (nonatomic, strong) UILabel *statusLabel;
 @property (nonatomic, strong) UIView *pointerView;
 @property (nonatomic, strong) NSMutableArray<UIButton *> *keyButtons;
-@property (nonatomic, strong) UIButton *streamerButton;
-@property (nonatomic, strong) UILabel *tuneLabel;
 @property (nonatomic) BOOL editorVisible;
 @property (nonatomic) BOOL backgroundUnlocked;
-// iOS 13+ 悬浮窗必须绑定到一个 UIWindowScene 才会真正显示到屏幕上。
-- (UIWindowScene *)activeWindowScene;
+@property (nonatomic, strong) UIButton *streamerButton;
+@property (nonatomic, strong) UILabel *tuneLabel;
+// 场景绑定（悬浮窗显示关键，运行时/KVC 实现，无编译期新类型依赖）
+- (id)activeWindowScene;
 - (void)attachToActiveScene;
 - (void)onSceneDidActivate:(NSNotification *)note;
-// 设置项落盘并广播，悬浮窗内直接改设置用
+// 悬浮窗内直接改设置
 - (void)setSettingValue:(id)value forKey:(NSString *)key;
+- (void)refreshSettingControls;
 @end
 
 @implementation JGHFloatingControl
@@ -81,17 +82,15 @@
                                                  selector:@selector(onPointerMoved:)
                                                      name:@"JGHPointerDidMove"
                                                    object:nil];
-        // 场景激活/连接时重新绑定 windowScene，保证悬浮窗一定会显示
-        if (@available(iOS 13.0, *)) {
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(onSceneDidActivate:)
-                                                         name:UISceneDidActivateNotification
-                                                       object:nil];
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(onSceneDidActivate:)
-                                                         name:UISceneDidConnectNotification
-                                                       object:nil];
-        }
+        // 场景激活/连接时重新绑定 windowScene（字符串通知名，无编译期类型依赖）
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onSceneDidActivate:)
+                                                     name:@"UISceneDidActivateNotification"
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onSceneDidActivate:)
+                                                     name:@"UISceneDidConnectNotification"
+                                                   object:nil];
     }
     return self;
 }
@@ -122,7 +121,7 @@
     [self.miniButton addGestureRecognizer:miniPan];
     [self.container addSubview:self.miniButton];
 
-    // 编辑面板（游戏内设置全部放这里）
+    // 编辑面板（加大以容纳游戏内设置项）
     CGFloat ew = 300.0, eh = 470.0;
     self.editorPanel = [[UIView alloc] initWithFrame:CGRectMake(40, 90, ew, eh)];
     self.editorPanel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.82];
@@ -136,7 +135,7 @@
     [self.editorPanel addGestureRecognizer:editorPan];
 
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(12, 8, ew - 24, 20)];
-    title.text = @"balls映射 · 游戏内设置";
+    title.text = @"佳影 · 按键编辑";
     title.textColor = [UIColor colorWithRed:0.45 green:0.85 blue:1.0 alpha:1];
     title.font = [UIFont boldSystemFontOfSize:14];
     [self.editorPanel addSubview:title];
@@ -147,14 +146,13 @@
     self.statusLabel.numberOfLines = 2;
     [self.editorPanel addSubview:self.statusLabel];
 
-    // 第一组：按键编辑
     NSArray *titles = @[@"解锁背景", @"添加点击键", @"添加宏按键", @"保存", @"关闭"];
     CGFloat buttonW = (ew - 36 - 20) / 3.0;
     for (NSInteger i = 0; i < titles.count; i++) {
         NSInteger col = i % 3;
         NSInteger row = i / 3;
         UIButton *b = [UIButton buttonWithType:UIButtonTypeSystem];
-        b.frame = CGRectMake(12 + col * (buttonW + 10), 62 + row * 38, buttonW, 32);
+        b.frame = CGRectMake(12 + col * (buttonW + 10), 56 + row * 40, buttonW, 32);
         b.backgroundColor = [UIColor colorWithRed:0.16 green:0.55 blue:0.9 alpha:1];
         [b setTitle:titles[i] forState:UIControlStateNormal];
         [b setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -165,14 +163,7 @@
         [self.editorPanel addSubview:b];
     }
 
-    // 第二组：主播模式 + 鼠标指针设置（都在游戏内悬浮窗里调）
-    UILabel *section2 = [[UILabel alloc] initWithFrame:CGRectMake(12, 146, ew - 24, 18)];
-    section2.text = @"主播模式 / 鼠标指针";
-    section2.textColor = [UIColor colorWithRed:0.45 green:0.85 blue:1.0 alpha:1];
-    section2.font = [UIFont boldSystemFontOfSize:12];
-    [self.editorPanel addSubview:section2];
-
-    // 主播模式开关
+    // 主播模式开关（游戏内悬浮窗里直接切换）
     self.streamerButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.streamerButton.frame = CGRectMake(12, 170, ew - 24, 32);
     self.streamerButton.backgroundColor = [UIColor colorWithRed:0.35 green:0.35 blue:0.4 alpha:1];
@@ -184,36 +175,36 @@
     [self.streamerButton addTarget:self action:@selector(editorAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.editorPanel addSubview:self.streamerButton];
 
-    // 指针大小 / 灵敏度：用一行两个按钮，格式 "名称-"/"名称+"
+    // 指针/灵敏度/滚动 微调
     NSArray *tuneTitles = @[@"指针-", @"指针+", @"灵敏度-", @"灵敏度+", @"滚动-", @"滚动+"];
+    CGFloat tbW = (ew - 36 - 10) / 2.0;
     for (NSInteger i = 0; i < tuneTitles.count; i++) {
-        NSInteger col = i % 2;
-        NSInteger row = i / 2;
+        NSInteger col = i % 2, row = i / 2;
         UIButton *b = [UIButton buttonWithType:UIButtonTypeSystem];
-        b.frame = CGRectMake(12 + col * (buttonW + 10), 210 + row * 38, buttonW, 32);
+        b.frame = CGRectMake(12 + col * (tbW + 10), 210 + row * 38, tbW, 30);
         b.backgroundColor = [UIColor colorWithRed:0.2 green:0.45 blue:0.35 alpha:1];
         [b setTitle:tuneTitles[i] forState:UIControlStateNormal];
         [b setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         b.titleLabel.font = [UIFont systemFontOfSize:12];
-        b.layer.cornerRadius = 7;
+        b.layer.cornerRadius = 6;
         b.tag = 200 + i;
         [b addTarget:self action:@selector(editorAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.editorPanel addSubview:b];
     }
 
-    // 当前参数值显示
-    self.tuneLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 332, ew - 24, 46)];
+    self.tuneLabel = [[UILabel alloc] initWithFrame:CGRectMake(12, 330, ew - 24, 46)];
     self.tuneLabel.textColor = [UIColor colorWithRed:0.8 green:0.9 blue:0.8 alpha:1];
     self.tuneLabel.font = [UIFont systemFontOfSize:10];
     self.tuneLabel.numberOfLines = 3;
     [self.editorPanel addSubview:self.tuneLabel];
 
-    // 提示：按键绑定方式
-    UILabel *tip = [[UILabel alloc] initWithFrame:CGRectMake(12, 384, ew - 24, 74)];
-    tip.text = @"说明：点「添加点击键/宏按键」放好位置后按「保存」。\n键盘按键 → 对应悬浮键；鼠标 → 屏幕指针（跟电脑一样）。\n主播模式开启后录屏看不到按键，你本机仍可见可用。";
+    UILabel *tip = [[UILabel alloc] initWithFrame:CGRectMake(12, 382, ew - 24, 78)];
+    tip.text = @"悬浮按键=绑定键盘按键；鼠标=像电脑一样控制指针。
+主播模式：录屏里看不见按键，本机照样可见可用。
+设置在此悬浮窗内调整，实时生效。";
     tip.textColor = [UIColor colorWithRed:0.75 green:0.78 blue:0.82 alpha:1];
     tip.font = [UIFont systemFontOfSize:10];
-    tip.numberOfLines = 5;
+    tip.numberOfLines = 4;
     [self.editorPanel addSubview:tip];
 
     // 虚拟鼠标指针：启动时直接放在屏幕中央可见位置，
@@ -236,49 +227,44 @@
     self.window.rootViewController = [UIViewController new];
     [self.window.rootViewController.view addSubview:self.container];
     [self attachToActiveScene];
-    // 不抢占 keyWindow（避免抢走游戏输入焦点），只把窗口显示出来。
-    // iOS 13+ 只要绑定了 windowScene，hidden=NO 就会真正上屏。
+    // 绑定 windowScene 后 hidden=NO 才会真正在 iOS 13+ 上屏
     self.window.hidden = NO;
 
     [self refreshStatus];
     [self applyStreamerMode];
     [self applyCaptureProtection];
+    [self refreshSettingControls];
 }
 
-#pragma mark - 场景绑定（悬浮窗显示的关键）
+#pragma mark - 场景绑定（悬浮窗显示的关键，运行时/KVC 无新类型依赖）
 
-- (UIWindowScene *)activeWindowScene {
-    if (@available(iOS 13.0, *)) {
-        // 优先取前台激活的场景
-        for (UIScene *scene in [UIApplication sharedApplication].connectedScenes) {
-            if (scene.activationState == UISceneActivationStateForegroundActive &&
-                [scene isKindOfClass:[UIWindowScene class]]) {
-                return (UIWindowScene *)scene;
-            }
-        }
-        // 兜底：任意已连接的窗口场景
-        for (UIScene *scene in [UIApplication sharedApplication].connectedScenes) {
-            if ([scene isKindOfClass:[UIWindowScene class]]) {
-                return (UIWindowScene *)scene;
-            }
-        }
+- (id)activeWindowScene {
+    UIApplication *app = [UIApplication sharedApplication];
+    id scenes = [app valueForKey:@"connectedScenes"];
+    if (!scenes || ![scenes respondsToSelector:@selector(objectEnumerator)]) return nil;
+    id foreground = nil, anyWindow = nil;
+    for (id scene in (NSSet *)scenes) {
+        if (![scene isKindOfClass:NSClassFromString(@"UIWindowScene")]) continue;
+        if (!anyWindow) anyWindow = scene;
+        NSInteger st = [[scene valueForKey:@"activationState"] integerValue];
+        if (st == 0) { foreground = scene; break; } // ForegroundActive = 0
     }
-    return nil;
+    return foreground ?: anyWindow;
 }
 
 - (void)attachToActiveScene {
-    if (@available(iOS 13.0, *)) {
-        UIWindowScene *scene = [self activeWindowScene];
-        if (scene && self.window.windowScene != scene) {
-            self.window.windowScene = scene;
-            // 场景变化后重新按场景尺寸布局
-            CGRect bounds = scene.coordinateSpace.bounds;
-            if (bounds.size.width > 0 && bounds.size.height > 0) {
-                self.window.frame = bounds;
-                self.container.frame = bounds;
-            }
+    id scene = [self activeWindowScene];
+    if (!scene) return;
+    if ([self.window valueForKey:@"windowScene"] == scene) return;
+    [self.window setValue:scene forKey:@"windowScene"];
+    @try {
+        id coord = [scene valueForKey:@"coordinateSpace"];
+        CGRect bounds = [[coord valueForKey:@"bounds"] CGRectValue];
+        if (bounds.size.width > 0 && bounds.size.height > 0) {
+            self.window.frame = bounds;
+            self.container.frame = bounds;
         }
-    }
+    } @catch (NSException *e) { /* 布局兜底 */ }
 }
 
 - (void)onSceneDidActivate:(NSNotification *)note {
@@ -296,12 +282,7 @@
 }
 
 - (void)editorAction:(UIButton *)sender {
-    NSInteger tag = sender.tag;
-    if (tag >= 200 && tag <= 205) {  // 指针/灵敏度/滚动 调节
-        [self tuneSettingForTag:tag];
-        return;
-    }
-    switch (tag) {
+    switch (sender.tag) {
         case 100: { // 解锁/锁定背景
             self.backgroundUnlocked = !self.backgroundUnlocked;
             [sender setTitle:self.backgroundUnlocked ? @"锁定背景" : @"解锁背景" forState:UIControlStateNormal];
@@ -317,19 +298,16 @@
         case 105: { // 主播模式开关
             BOOL on = ![JGHSettings sharedSettings].streamerMode;
             [self setSettingValue:@(on) forKey:@"streamerMode"];
-            [self.streamerButton setTitle:on ? @"主播模式：开（录屏隐藏按键）" : @"主播模式：关（录屏可见按键）"
-                                 forState:UIControlStateNormal];
-            self.streamerButton.backgroundColor = on
-                ? [UIColor colorWithRed:0.75 green:0.35 blue:0.2 alpha:1]
-                : [UIColor colorWithRed:0.35 green:0.35 blue:0.4 alpha:1];
+            [self refreshSettingControls];
             [self applyCaptureProtection];
             break;
         }
-        default: break;
+        default:
+            if (sender.tag >= 200 && sender.tag <= 205) [self tuneSettingForTag:sender.tag];
+            break;
     }
 }
 
-// 200 指针-  201 指针+  202 灵敏度-  203 灵敏度+  204 滚动-  205 滚动+
 - (void)tuneSettingForTag:(NSInteger)tag {
     JGHSettings *s = [JGHSettings sharedSettings];
     switch (tag) {
@@ -344,13 +322,11 @@
     [self onSettingsChanged];
 }
 
-// 把单个设置写入 plist 并广播，保证同一进程内立即生效
 - (void)setSettingValue:(id)value forKey:(NSString *)key {
     NSMutableDictionary *settings = [[NSDictionary dictionaryWithContentsOfFile:[JGHCommon settingsPath]] mutableCopy];
     if (!settings) settings = [NSMutableDictionary dictionary];
     settings[key] = value;
-    NSError *err = nil;
-    [JGHCommon ensureDirectory:[JGHCommon dataDirectory] error:&err];
+    [JGHCommon ensureDirectory:[JGHCommon dataDirectory] error:NULL];
     [settings writeToFile:[JGHCommon settingsPath] atomically:YES];
     [[JGHSettings sharedSettings] reload];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"JGHSettingsChanged" object:nil];
@@ -377,7 +353,6 @@
 - (void)refreshEditor {
     for (UIButton *b in self.keyButtons) [b removeFromSuperview];
     [self.keyButtons removeAllObjects];
-    [self refreshSettingControls];
 
     JGHProfile *profile = [JGHKeyMapManager sharedManager].activeProfile;
     NSArray *keys = [profile.mappings.allKeys sortedArrayUsingSelector:@selector(compare:)];
@@ -402,21 +377,18 @@
     }
 }
 
-// 同步设置类控件显示（主播按钮、数值标签）
 - (void)refreshSettingControls {
-    JGHSettings *s = [JGHSettings sharedSettings];
-    BOOL streamer = s.streamerMode;
+    JGHSettings *st = [JGHSettings sharedSettings];
     if (self.streamerButton) {
-        [self.streamerButton setTitle:streamer ? @"主播模式：开（录屏隐藏按键）" : @"主播模式：关（录屏可见按键）"
+        [self.streamerButton setTitle:st.streamerMode ? @"主播模式：开（录屏隐藏按键）" : @"主播模式：关（录屏可见按键）"
                              forState:UIControlStateNormal];
-        self.streamerButton.backgroundColor = streamer
+        self.streamerButton.backgroundColor = st.streamerMode
             ? [UIColor colorWithRed:0.75 green:0.35 blue:0.2 alpha:1]
             : [UIColor colorWithRed:0.35 green:0.35 blue:0.4 alpha:1];
     }
     if (self.tuneLabel) {
-        self.tuneLabel.text = [NSString stringWithFormat:
-            @"指针大小: %.0f   灵敏度: %.1f   每格滚动: %ld",
-            s.pointerSize, s.mouseSensitivity, (long)s.scrollStep];
+        self.tuneLabel.text = [NSString stringWithFormat:@"指针大小 %.0f  鼠标灵敏度 %.1f  滚动步长 %ld",
+                               st.pointerSize, st.mouseSensitivity, (long)st.scrollStep];
     }
 }
 
@@ -487,6 +459,7 @@
 #pragma mark - 设置与状态
 
 - (void)onSettingsChanged {
+    [self refreshSettingControls];
     [[JGHSettings sharedSettings] reload];
     CGFloat ps = [JGHSettings sharedSettings].pointerSize;
     self.pointerView.frame = CGRectMake(CGRectGetMinX(self.pointerView.frame),
@@ -505,7 +478,6 @@
         self.pointerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.85];
     }
     [self applyStreamerMode];
-    [self refreshSettingControls];
     [self refreshStatus];
 }
 
@@ -514,34 +486,25 @@
 }
 
 - (void)applyStreamerMode {
-    // 主播模式：录屏/截图里看不到按键，但本机屏幕上照常可见可操作。
-    // 关键：绝不能把整个 container 隐藏，否则本机也看不见了。
-    // disableUpdateMask 只在图层上打“合成排除”标记，不影响本机渲染。
+    // 主播模式不再把自己从屏幕上隐藏，而是把悬浮层标记为“捕获时排除”。
+    // 这样录屏/截图里看不到按键，但用户在本机屏幕上照常可见可操作。
     [self applyCaptureProtection];
 }
 
 - (void)applyCaptureProtection {
     BOOL protect = [JGHSettings sharedSettings].streamerMode;
-    CALayer *layer = self.container.layer;
-    if (!layer) return;
-
-    // 只操作按键/指针这类"敏感"子层，绝不动 container 本身，
-    // 这样即使私有 API 行为异常，也不会导致整个悬浮层在本机消失。
-    NSArray *sensitiveLayers = @[
-        self.miniButton.layer,
-        self.editorPanel.layer,
-        self.pointerView.layer
-    ].copy;
-    for (UIButton *b in self.keyButtons) {
-        sensitiveLayers = [sensitiveLayers arrayByAddingObject:b.layer];
-    }
-
     NSString *key = @"disableUpdateMask";
     NSInteger mask = protect ? ((1 << 1) | (1 << 4)) : 0;
-    for (CALayer *sub in sensitiveLayers) {
-        if (!sub || ![sub respondsToSelector:NSSelectorFromString(key)]) continue;
+    // 只标记按键/指针这些子层，绝不动 container，保证本机始终可见可操作
+    NSMutableArray *layers = [NSMutableArray array];
+    if (self.miniButton) [layers addObject:self.miniButton.layer];
+    if (self.editorPanel) [layers addObject:self.editorPanel.layer];
+    if (self.pointerView) [layers addObject:self.pointerView.layer];
+    for (UIButton *b in self.keyButtons) if (b) [layers addObject:b.layer];
+    for (CALayer *layer in layers) {
+        if (![layer respondsToSelector:NSSelectorFromString(key)]) continue;
         @try {
-            [sub setValue:@(mask) forKey:key];
+            [layer setValue:@(mask) forKey:key];
         } @catch (NSException *exception) {
             JGHLog(@"主播模式保护设置失败: %@", exception.reason);
         }
@@ -566,10 +529,10 @@
 
 - (void)show {
     dispatch_async(dispatch_get_main_queue(), ^{
-        // 每次 show 都重新绑定场景并确保上屏（场景可能在 init 之后才就绪）
         [self attachToActiveScene];
         self.window.hidden = NO;
         [self applyStreamerMode];
+        [self refreshSettingControls];
     });
 }
 
