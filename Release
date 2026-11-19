@@ -5,13 +5,13 @@ Codename: stable
 Architectures: iphoneos-arm64 iphoneos-arm64e iphoneos-arm
 Components: main
 Description: balls映射 rootless 软件源
-Date: Thu, 19 Nov 2026 02:34:51 GMT
+Date: Thu, 19 Nov 2026 02:45:39 GMT
 MD5Sum:
- f5602f372d64ef050e1ee6cd5828679e 14979 Packages
- 550b0cdcdb5f62355ee065c386ff20ff 3642 Packages.gz
+ ddeb8c33963609b80bb19002da814c93 1255 Packages
+ 43afa28a170ebfaf3c47a977264fb13b 819 Packages.gz
 SHA1:
- 533d7104d9d8224061b02889b3f0372334705232 14979 Packages
- 95d69e8aa5cccdfd2e2a44743b47c16a3fbb2027 3642 Packages.gz
+ 822db4ce6ac282cc027b32a273dac7920ab4eddf 1255 Packages
+ ef1d43ec5d020bb0feb9ba74cae13b42610282a9 819 Packages.gz
 SHA256:
- b94fbc93282af8b14931e232d66958866393d35ea87b0033f3d330b009f748c9 14979 Packages
- 962e090fd694e0827b50fe25d8bcfbd6ace9ed7aacc15372f79b0918654522c0 3642 Packages.gz
+ 6bb8aec9028fd2f3d7956a2c61b407fa9261a7d5a9838c6c2fd9a8058d5e0898 1255 Packages
+ 0e1163ce64ecf8076916f8aa0865024c7a06642e5392a537d364cc3b73d09709 819 Packages.gz
