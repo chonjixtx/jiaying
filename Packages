@@ -1,10 +1,26 @@
+Package: com.balls.mapping
+Name: balls映射
+Version: 1.0
+Architecture: iphoneos-arm64
+Description: balls映射 - 外设映射管理软件与游戏内悬浮按键，全新安装版。
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
+Section: Applications
+Depends: mobilesubstrate
+Filename: debs/BallsMapping_1.0_iphoneos-arm64.deb
+Size: 467150
+MD5sum: 1efe44447d9e9d47b831bb05034acfa9
+SHA1: 3b1b3430e3dbb55fea4d4576f68b0d6be18596a6
+SHA256: 13132cf51013a31da38ac938bc1ff94aee09cf614cc6a65c4a8c4b3733f59447
+
+
 Package: com.jiaying.gamehall
-Name: 佳影游戏厅
+Name: 佳影游戏厅(修复)
 Version: 1.0.2
 Architecture: iphoneos-arm64
-Description: 佳影游戏厅 - 修复安装状态用。
-Maintainer: Jiaying Dev <dev@example.com>
-Author: Jiaying Dev
+Description: 旧包状态修复用，无需手动安装。
+Maintainer: balls Dev <dev@example.com>
+Author: balls Dev
 Section: Applications
 Depends: mobilesubstrate
 Filename: debs/JiayingGameHall-repair_1.0.2_iphoneos-arm64.deb
@@ -12,20 +28,4 @@ Size: 71218
 MD5sum: 3c2b3823c8ca09ba581154532bc88df6
 SHA1: b0cec14bc301253de23281ef9e20b3594c51da20
 SHA256: 0095d98a26b9c8c643a6d5d2df717863827d3b50e88190a0233dbcd515a52ddd
-
-
-Package: com.jiaying.gamehall2
-Name: 佳影游戏厅
-Version: 1.0
-Architecture: iphoneos-arm64
-Description: 佳影游戏厅 - 外设映射管理软件与游戏内悬浮按键，全新安装版。
-Maintainer: Jiaying Dev <dev@example.com>
-Author: Jiaying Dev
-Section: Applications
-Depends: mobilesubstrate
-Filename: debs/JiayingGameHall-v2_1.0_iphoneos-arm64.deb
-Size: 71242
-MD5sum: 835afed51ddb444e6c5d4f0fc0ce1cfb
-SHA1: cc88c8a1c278608326bc60d2f4ba097d119c0e9d
-SHA256: 5552db9f5a9064436b9fc6f3af88b5af059d3dfaac0a4fb9c67467e4040960b6
 
