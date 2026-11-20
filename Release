@@ -5,13 +5,13 @@ Codename: stable
 Architectures: iphoneos-arm64
 Components: main
 Description: 佳影游戏厅 rootless 软件源
-Date: Thu, 19 Nov 2026 14:51:20 GMT
+Date: Fri, 20 Nov 2026 00:57:29 GMT
 MD5Sum:
- 1d714936c12bb5897babb33093c18b43 1228 Packages
- 1e65a9664efea34748cea319eec773fc 746 Packages.gz
+ ae264e6bb17ad6ecd236640fb8914f6b 706 Packages
+ 45165417c4d467350823a127d67afe3e 528 Packages.gz
 SHA1:
- db31f1fd1117f0fc0edb330107d5c81243db27aa 1228 Packages
- 88855cdc76e1d42b169c87ee85c5858f2ea99c8b 746 Packages.gz
+ 76cd5a8bca161292ba9d603906831673e6c691fb 706 Packages
+ 84e4e3728f56a9a6287383fa63775599f3282445 528 Packages.gz
 SHA256:
- f88428c1b8b9b99f4502e6cb1d8899b10556cf22db3e3bbe5e8f755991005485 1228 Packages
- 74945da2d42948df75feec5bebaffbec3edecb4d7a623352529e8bbd6084b1cc 746 Packages.gz
+ c019d66cf11ab60010b1373c1df37142ff377f12b9c54f9777f4881c241e952f 706 Packages
+ 7292ba26968cf6edb18c31a5f8f4dc182bfd0aa063524667c371de225a548db0 528 Packages.gz
