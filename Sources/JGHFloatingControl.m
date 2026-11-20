@@ -225,8 +225,9 @@
     self.window.rootViewController = [UIViewController new];
     [self.window.rootViewController.view addSubview:self.container];
     [self attachToActiveScene];
-    // 绑定 windowScene 后 hidden=NO 才会真正在 iOS 13+ 上屏
-    self.window.hidden = NO;
+    // 安全：悬浮窗默认隐藏，只有 JGHTweakManager 在确认当前进程是
+    // games.plist 白名单游戏后才调用 show 上屏。防止误在桌面/系统进程显示。
+    self.window.hidden = YES;
 
     [self refreshStatus];
     [self applyStreamerMode];

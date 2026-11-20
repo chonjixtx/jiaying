@@ -10,13 +10,44 @@
 
 static BOOL jghInitialized = NO;
 
+// 只在用户于桌面 App 里添加过的游戏里激活。
+// 关键：SpringBoard（桌面/锁屏）本身也是 UIApplication，若不加判断，
+// 悬浮窗会盖在桌面上并拦截全部触摸，导致设备无法操作。
+static BOOL JGHShouldActivate(NSString *bundleID) {
+    if (bundleID.length == 0) return NO;
+    // 1) 硬性排除桌面与所有系统 App，绝不注入 UI
+    if ([bundleID isEqualToString:@"com.apple.springboard"]) return NO;
+    if ([bundleID hasPrefix:@"com.apple."]) return NO;
+    // 排除本工具自己的 App
+    if ([bundleID isEqualToString:@"com.jiaying.gamehall.app"] ||
+        [bundleID isEqualToString:@"com.jiaying.gamehall.unified"] ||
+        [bundleID isEqualToString:@"com.jiaying.gamehall"]) return NO;
+
+    // 2) 白名单：只有 games.plist 里添加过的游戏才激活
+    NSString *gamesPath = [[JGHCommon dataDirectory] stringByAppendingPathComponent:@"games.plist"];
+    NSArray *games = [NSArray arrayWithContentsOfFile:gamesPath];
+    if (![games isKindOfClass:[NSArray class]]) return NO;
+    for (id item in games) {
+        if (![item isKindOfClass:[NSDictionary class]]) continue;
+        NSString *gameBundle = [[(NSDictionary *)item objectForKey:@"bundleID"] description];
+        if ([gameBundle isEqualToString:bundleID]) return YES;
+    }
+    return NO;
+}
+
 static void JGHInitialize(void) {
     if (jghInitialized) return;
+
+    NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier] ?: @"";
+    if (!JGHShouldActivate(bundleID)) {
+        JGHLog(@"跳过非游戏进程: %@", bundleID ?: @"?");
+        return;  // 不置 jghInitialized，避免后续白名单变化时无法重试
+    }
     jghInitialized = YES;
 
     JGHLog(@"启动 (rootless=%@, bundle=%@)",
            [JGHCommon isRootless] ? @"YES" : @"NO",
-           [[NSBundle mainBundle] bundleIdentifier] ?: @"?");
+           bundleID);
     JGHLog(@"数据目录: %@", [JGHCommon dataDirectory]);
 
     JGHTweakManager *mgr = [JGHTweakManager sharedManager];
